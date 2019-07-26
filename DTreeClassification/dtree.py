@@ -277,6 +277,9 @@ def classify(observations, tree, dataMissing=False):
         Obs: o autor do código, Michael Dorner, utilizou a referência
         http://blog.ludovf.net/python-collections-defaultdict/
         porém o site encontra-se fora do ar.
+        
+        A versão arquivada encontra-se disponível em:
+        https://web.archive.org/web/20130513205945/http://blog.ludovf.net/python-collections-defaultdict/
         """
 
         if tree.results != None:    # Nó folha com o resultado
