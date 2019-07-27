@@ -127,7 +127,7 @@ def growDecisionTreeFrom(rows, evaluationFunction=entropy):
     if len(rows) == 0: return DecisionTree()     
 
     # Realiza o cálculo do grau da entropia do nó pai
-    currentScore = evaluationFunction(rows)     
+    currentScore = entropy(rows)     
 
     bestGain = 0.0
     bestAttribute = None
@@ -152,7 +152,7 @@ def growDecisionTreeFrom(rows, evaluationFunction=entropy):
             p = float(len(set1)) / len(rows)
 
             # Cálculo do ganho de informação: entropia(pai) - entropia(filhos)
-            gain = currentScore - p*evaluationFunction(set1) - (1-p)*evaluationFunction(set2)
+            gain = currentScore - p*entropy(set1) - (1-p)*entropy(set2)
 
             """ Se o ganho de informação for maior do que já observado
                 o atributo em questão se torna o melhor atributo """
@@ -167,10 +167,10 @@ def growDecisionTreeFrom(rows, evaluationFunction=entropy):
     # Realiza a geração de nós filhos com os melhores sets gerados da divisão
     if bestGain > 0:
         # Ramificação com valores do tipo Verdadeiro
-        trueBranch = growDecisionTreeFrom(bestSets[0], evaluationFunction)  
+        trueBranch = growDecisionTreeFrom(bestSets[0])  
 
         # Ramificação com valores do tipo Falso
-        falseBranch = growDecisionTreeFrom(bestSets[1], evaluationFunction)
+        falseBranch = growDecisionTreeFrom(bestSets[1])
 
         # Armazena o nó pai na árvore
         return DecisionTree(col=bestAttribute[0], value=bestAttribute[1], trueBranch=trueBranch,
