@@ -1,6 +1,7 @@
 import csv
 import pydotplus
 from collections import defaultdict
+import pandas as pd
 
 def loadCSV(file):
     """
@@ -34,7 +35,10 @@ def loadCSV(file):
             header[column] = str(attribute)
 
     # Para cada item de cada linha do arquivo csv, converte-se a string para o número associado
-    return header, [[convertTypes(item) for item in row] for row in reader]
+    dataset = [[convertTypes(item) for item in row] for row in reader]
+    dataset = pd.DataFrame(data=dataset)
+
+    return header, dataset
 
 def dotgraph(decisionTree, headings):
     """

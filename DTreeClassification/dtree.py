@@ -28,7 +28,7 @@ def divideSet(rows, column, value):
     Realiza a separação dos atributos dado um valor de comparação.
 
     Args:
-        rows (): coleção de dados
+        rows (list): coleção de dados
         column (int): quantidade de atributos
         value: valor a ser usado como comparação
     
@@ -61,7 +61,7 @@ def uniqueCounts(rows):
     presente.
 
     Args:
-        rows: coleção de dados
+        rows (list): coleção de dados
     
     Returns: 
         Dict: atributo de resposta com sua quantidade correspondente
@@ -84,7 +84,7 @@ def entropy(rows):
     -somatorio(p(nó) * log2(p(nó)))
 
     Args:
-        rows (): coleção de dados
+        rows (list): coleção de dados
 
     Returns:
         float: grau de entropia
@@ -115,7 +115,7 @@ def growDecisionTreeFrom(rows, evaluationFunction=entropy):
     para teste. 
 
     Args:
-        rows (): coleçao de dados
+        rows (list): coleçao de dados
         evaluationFunction (function): função de avaliação
 
     Returns:
@@ -225,14 +225,20 @@ def prune(tree, minGain, evaluationFunction=entropy):
             tree.results = uniqueCounts(trueBranch + falseBranch)
 
 
-def classify(observations, tree, dataMissing=False):
+def classify(observations, tree, dataMissing=False, accuracyTest=True):
     """
     Classifica as observações de acordo com a árvore.
 
     Args:
-        observation: observação a ser avaliada
+        observation (list): observação a ser avaliada
         tree (DecisionTree): árvore de decisão gerada
         dataMissing (bool): True ou False se tiver dados faltando ou não
+        accuracyTest (bool): True para realizar um teste de acurácia
+
+    Returns:
+        list: se for uma classificação de objetos cujo resultado é desconhecido
+        dict: se for um teste de medição de acurácia, baseado em um conjunto de
+        testes
     """
 
     def classifyWithoutMissingData(observations, tree):
@@ -312,8 +318,70 @@ def classify(observations, tree, dataMissing=False):
             # Desce recursivamente na árvore
             return classifyWithMissingData(observations, branch)
 
-    # Seleciona a função de classificação de acordo com dataMissing
-    if dataMissing:
-        return classifyWithMissingData(observations, tree)
-    else:
-        return classifyWithoutMissingData(observations, tree)
+
+    """
+    Seleciona a função de classificação de acordo com dataMissing
+
+    As funções de classifyWithMissingData e classifyWithoutMissingData, 
+    retornam um dicionário com a classificação daquele nó mais a quantidade
+    daquele resultado do nó. Se um nó tiver mais de uma classificação, será 
+    considerado o resultado com a maior quantidade.
+
+    - Se for realizado um teste de acurácia o resultado obtido da classificação
+    será comparado com o valor do resultado previamente dado. Um dicionário 
+    será retornado com a quantidade de acertos, erros, e a acurária.
+    - Se for realizado uma obtenção de classificação, retorna-se uma lista com
+    todas as classificações das observações dadas.
+    """
+
+    trueClassify = 0
+    falseClassify = 0
+
+    if dataMissing: # Se tiver dados faltantes no conjunto de observação
+        if not accuracyTest: # Se for para obter a classificação de um cojunto
+            output = []
+            for row in observations:
+                value = classifyWithMissingData(observations, tree)
+
+                if len(value) > 1: result = 0 if value[0.0] > value[1.0] else 1
+                else: result = list(value)[0]
+                
+                output.push(result)
+
+            return output
+
+        else:
+            for row in observations:
+                value = classifyWithMissingData(row[0:-1], tree) 
+
+                if len(value) > 1: result = 0 if value[0.0] > value[1.0] else 1
+                else: result = list(value)[0]
+
+                if value == row[-1]: trueClassify += 1
+                else: falseClassify += 1
+
+
+    else: # Se não tiver dados faltantes no conjunto de observação
+        if not accuracyTest: # Se for para obter a classificação de um cojunto
+            output = []
+            for row in observations:
+                value = classifyWithoutMissingData(observations, tree)
+
+                if len(value) > 1: result = 0 if value[0.0] > value[1.0] else 1
+                else: result = list(value)[0]
+                
+                output.push(result)
+
+            return output
+
+        else: # Se for um teste de acurácia
+            for row in observations:
+                value = classifyWithoutMissingData(row[0:-1], tree) 
+
+                if len(value) > 1: result = 0 if value[0.0] > value[1.0] else 1
+                else: result = list(value)[0]
+
+                if result == row[-1]: trueClassify += 1
+                else: falseClassify += 1
+
+    return {'Acertos': trueClassify, 'Erros': falseClassify, 'Acurácia': float(round(float(trueClassify) / len(observations), 4))}
