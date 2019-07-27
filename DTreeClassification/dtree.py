@@ -1,8 +1,7 @@
 # Código base foi escrito por Michael Dorner
 # https://github.com/michaeldorner/DecisionTrees
 #
-# Algumas modificações realizadas, como a função dotgraph, foram realizadas por
-# Stanley Luck 
+# A função dotgraph é uma modificação realizada por Stanley Luck 
 # https://github.com/lucksd356/DecisionTrees
 #
 
@@ -25,7 +24,9 @@ class DecisionTree:
 
 def divideSet(rows, column, value):
     """
-    Realiza a separação dos atributos dado um valor de comparação.
+    Realiza a separação dos atributos dado um valor de comparação. Essa 
+    implementação permite tanto atributos númericos quanto atributos do
+    tipo texto.
 
     Args:
         rows (list): coleção de dados
@@ -227,7 +228,7 @@ def prune(tree, minGain, evaluationFunction=entropy):
 
 def classify(observations, tree, dataMissing=False, accuracyTest=True):
     """
-    Classifica as observações de acordo com a árvore.
+    Classifica as observações de acordo com a árvore de classificação gerada.
 
     Args:
         observation (list): observação a ser avaliada
@@ -340,13 +341,17 @@ def classify(observations, tree, dataMissing=False, accuracyTest=True):
     if dataMissing: # Se tiver dados faltantes no conjunto de observação
         if not accuracyTest: # Se for para obter a classificação de um cojunto
             output = []
+            n = 1
             for row in observations:
-                value = classifyWithMissingData(observations, tree)
+                value = classifyWithMissingData(row, tree)
 
-                if len(value) > 1: result = 0 if value[0.0] > value[1.0] else 1
-                else: result = list(value)[0]
+                if len(value) > 1: r = 0 if value[0.0] > value[1.0] else 1
+                else: r = list(value)[0]
                 
-                output.push(result)
+                result = 'Aluno com desempenho satisfatório' if r else 'Aluno com desempenho não satisfatório'
+
+                output.append(str(n) + 'ª Classificação: ' + result)
+                n += 1
 
             return output
 
@@ -364,13 +369,17 @@ def classify(observations, tree, dataMissing=False, accuracyTest=True):
     else: # Se não tiver dados faltantes no conjunto de observação
         if not accuracyTest: # Se for para obter a classificação de um cojunto
             output = []
+            n = 1
             for row in observations:
-                value = classifyWithoutMissingData(observations, tree)
+                value = classifyWithoutMissingData(row, tree)
 
-                if len(value) > 1: result = 0 if value[0.0] > value[1.0] else 1
-                else: result = list(value)[0]
+                if len(value) > 1: r = 0 if value[0.0] > value[1.0] else 1
+                else: r = list(value)[0]
                 
-                output.push(result)
+                result = 'Aluno com desempenho satisfatório' if r else 'Aluno com desempenho não satisfatório'
+                            
+                output.append(str(n) + 'ª Classificação: ' + result)                
+                n += 1
 
             return output
 
@@ -384,4 +393,8 @@ def classify(observations, tree, dataMissing=False, accuracyTest=True):
                 if result == row[-1]: trueClassify += 1
                 else: falseClassify += 1
 
-    return {'Acertos': trueClassify, 'Erros': falseClassify, 'Acurácia': float(round(float(trueClassify) / len(observations), 4))}
+    return {
+            'Acertos': trueClassify, 
+            'Erros': falseClassify, 
+            'Acurácia': float(round(float(trueClassify)/len(observations), 4))
+            }

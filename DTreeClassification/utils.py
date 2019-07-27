@@ -1,3 +1,10 @@
+# Código base foi escrito por Michael Dorner
+# https://github.com/michaeldorner/DecisionTrees
+#
+# A função dotgraph é uma modificação realizada por Stanley Luck 
+# https://github.com/lucksd356/DecisionTrees
+#
+
 import csv
 import pydotplus
 from collections import defaultdict
