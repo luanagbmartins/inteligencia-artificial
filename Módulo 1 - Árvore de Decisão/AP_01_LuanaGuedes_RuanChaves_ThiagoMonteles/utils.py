@@ -82,10 +82,12 @@ def dotgraph(decisionTree, headings):
             return
 
     toString(0, decisionTree, None)
+
     lsDot = ['digraph Tree {',
                 'node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;',
                 'edge [fontname=helvetica] ;'
     ]
+
     i_node = 0
     dcParent = {}
     for nSplit in range(len(dcNodes)):
@@ -124,3 +126,5 @@ def dotgraph(decisionTree, headings):
     dot_data = '\n'.join(lsDot)
     return dot_data
 
+def dotgraph(dot, decisionTree, headings):
+    
