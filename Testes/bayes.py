@@ -65,11 +65,20 @@ class Driver(object):
         find = self.table_files_query.select()
         return self.engine.execute(find).fetchall()
 
+import datetime
+
 if __name__ == '__main__':
 
+    dataset_gaussian = pd.read_csv('dataset_gaussian.csv')
+    dataset_bernoulli = pd.read_csv('dataset_bernoulli.csv')
+    driver = Driver()
+    driver.connect()
+    start = int(datetime.datetime.now().timestamp())
     while True:
 
-        dataset_gaussian = pd.read_csv('dataset_gaussian.csv')
+        now = int(datetime.datetime.now().timestamp())
+        if now - start > 60 * 5:
+            break
 
         X = dataset_gaussian.iloc[:, 0:-1].values.tolist()
         y = np.array(dataset_gaussian.iloc[:, -1].values.tolist()).flatten()
@@ -81,8 +90,6 @@ if __name__ == '__main__':
         gnb.fit(X_train, y_train)
 
         gaussian_predictions = gnb.predict(X_test)
-
-        dataset_bernoulli = pd.read_csv('dataset_bernoulli.csv')
 
         X = dataset_bernoulli.iloc[:, 0:-1].values.tolist()
         y = np.array(dataset_bernoulli.iloc[:, -1].values.tolist()).flatten()
@@ -117,14 +124,12 @@ if __name__ == '__main__':
         cm = confusion_matrix(y_test, combined_predictions)
 
         params = {
-            'id' : str(uuid.uuid4()),
-            'name' : 'naive-bayes-02-07-2019',
+            'id' : float(datetime.datetime.now().timestamp()),
+            'name' : 'new_naive-bayes-02-07-2019',
             '0,0' : float(cm[0][0]),
             '0,1' : float(cm[0][1]),
             '1,0' : float(cm[1][0]),
             '1,1' : float(cm[1][1]),
         }
-        
-        driver = Driver()
-        driver.connect().insert(params)
-        driver.engine.close()
+    
+        driver.insert(params)
