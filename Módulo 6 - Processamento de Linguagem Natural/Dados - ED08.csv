@@ -1,0 +1,878 @@
+Resposta 1;Resposta 2;Resposta 3;Resposta 4;Resposta 5;Resposta 6;Resposta 7;Resposta 8;Resposta 9;Resposta 10;Resposta 11;Resposta 12;Resposta 13;Resposta 14;Resposta 15;Resposta 16;Resposta 17;Resposta 18;Resposta 19;Resposta 20
+;;;;;;;;;;;;;;;;;;;
+ALGORITMOS GENÉTICOS SÃO UMA FORMA DE BUSCA LOCAL QUE USA MÉTODOS BASEADOS NA EVOLUÇÃO PARA FAZER PEQUENAS MUDANÇAS EM UMA POPULAÇÃO DE CROMOSSOMOS, NA TENTATIVA DE IDENTIFICAR UMA SOLUÇÃO ÓTIMA.;"TEMOS VISTO VÁRIAS REPRESENTAÇÕES DIFERENTES QUE PODEM SER USADAS EM TÉCNICAS EVOLUTIVAS COMO ALGORITMOS GENÉTICOS. A PROGRAMAÇÃO GENÉTICA É USADA PARA DESENVOLVER EXPRESSÕES S, QUE PODEM SER USADAS COMO PROGRAMAS LISP PARA RESOLVER PROBLEMAS. OS SISTEMAS CLASSIFICADORES USAM UMA CADEIA DE NÚMEROS QUE REPRESENTAM PROPRIEDADES DO AMBIENTE E SÍMBOLOS QUE REPRESENTAM RESPOSTAS A ESSAS PROPRIEDADES.
+
+A REPRESENTAÇÃO MAIS SIMPLES PARA ALGORITMOS GENÉTICOS É AQUELA QUE FOI USADA POR JOHN HOLLAND: UMA SÉRIE DE BITS. UMA SEQUÊNCIA DE BITS É CONHECIDA COMO UM CROMOSSOMO E CADA BIT É CONHECIDO COMO UM GENE. AMBOS OS TERMOS SÃO EMPRESTADOS DIRETAMENTE DA GENÉTICA E ILUSTRAM A MANEIRA PRÓXIMA EM QUE ALGORITMOS GENÉTICOS ESPELHAM PROCESSOS BIOLÓGICOS.";A POPULAÇÃO CONSISTE DE UM CONJUNTO DE CROMOSSOMOS, CADA QUAL, COMO VIMOS, É COMPOSTO DE GENES. UM CROMOSSOMO É GERALMENTE USADO PARA REPRESENTAR UM “INDIVÍDUO” COMPLETO DENTRO DA POPULAÇÃO - EM OUTRAS PALAVRAS, UMA REPRESENTAÇÃO COMPLETA DE UMA SOLUÇÃO OU UMA CLASSIFICAÇÃO. TAMBÉM É POSSÍVEL COMBINAR CROMOSSOMOS JUNTOS PARA FORMAR CRIATURAS, O QUE REFLETE MAIS DE PERTO A GENÉTICA REAL, PORQUE CADA INDIVÍDUO NO MUNDO REAL TEM UM NÚMERO DE CROMOSSOMOS.;"O processo para executar um algoritmo genético é o seguinte:
+
+1. Gerar uma população aleatória de cromossomos (esta é a primeira geração).
+
+2. Se os critérios de terminação estiverem satisfeitos, pare. Caso contrário, continue na etapa 3.
+
+3. Determine a adequação de cada cromossomo.
+
+4. Aplique crossover e mutação aos cromossomos selecionados da geração atual para gerar uma nova população de cromossomos - a próxima geração.
+
+5. Volte ao passo 2.
+
+O tamanho da população deve ser determinado com antecedência. Normalmente, o tamanho da população permanece constante de uma geração para a próxima. Em algumas situações, pode ser útil ter uma população que mude de tamanho.
+
+O tamanho de cada cromossomo deve permanecer o mesmo para o cruzamento a ser aplicado. É possível executar algoritmos genéticos com tamanhos de cromossomos variáveis, mas isso é incomum.
+
+Tipicamente, os cromossomos mais aptos são selecionados em cada geração para se acasalarem, e cada par de cromossomos é permitido produzir dois descendentes. O conjunto resultante de cromossomas descendentes substitui a geração anterior.
+
+Também é possível permitir que pais particularmente aptos produzam relativamente mais descendentes e permitam que certos membros de uma geração sobrevivam à próxima geração. Para a maior parte deste capítulo, vamos supor que cada par de pais produz dois descendentes e que esses descendentes substituam os pais.";"O crossover é o cruzamento entre cromossomos de uma mesma geração. O operador de crossover é aplicado a dois cromossomos com o mesmo comprimento da seguinte forma:
+
+1. Selecione um ponto de cruzamento aleatório.
+
+2. Quebre cada cromossomo em duas partes, dividindo-o no ponto de cruzamento.
+
+3. Recombine os cromossomos quebrados combinando a frente de um com as costas do outro, e vice-versa, para produzir dois novos
+
+cromossomos.";"O crossover de um ponto define apenas um ponto de divisão no cromossomo, podendo no sexto ou sétimo gene, depois pegar a parte maior e cruza com outro cromossomo que fez este mesmo processo. 
+
+No cruzamento de dois pontos, dois pontos são escolhidos que dividem os cromossomos em duas seções, com as seções externas consideradas unidas para transformar o cromossomo em um anel. 
+
+Outra forma de cruzamento é crossover uniforme. Aqui, uma probabilidade, p, é usada para determinar se um dado bit do pai 1 será usado, ou do pai 2. Em outras palavras, um filho pode receber quaisquer bits aleatórios de cada um de seus pais.";A mutação é um operador unário (ou seja , é aplicada a apenas um argumento - um único gene) que é geralmente aplicado com uma baixa probabilidade, como 0,01 ou 0,001. A mutação envolve simplesmente inverter o valor de um bit em um cromossomo. Por exemplo, com uma taxa de mutação de 0,01, pode ser esperado que um gene em um cromossomo de 100 genes possa ser revertido.;"Normalmente existem duas maneiras em que uma execução de um algoritmo genético é finalizada. Normalmente, um limite é colocado no número de gerações, após o qual a corrida é considerada como concluída.
+
+Com alguns problemas, a execução pode parar quando uma determinada solução é atingida ou quando o nível de condicionamento mais alto da população atinge um determinado valor. Por exemplo, um algoritmo genético pode ser usado para resolver uma função matemática. Nesse caso, fica claro que a execução pode parar quando a solução correta for atingida, para a qual pode ser facilmente testada.
+
+Em muitos casos, os algoritmos genéticos são usados ​​para resolver problemas que possuem uma solução objetiva, caso em que o algoritmo pode parar quando atinge essa solução. Em outros casos, eles são usados ​​para propósitos mais abstratos, como gerar imagens interessantes. Nestes casos, o julgamento humano deve ser usado para determinar quando terminar.";"ALGORITMOS GENÉTICOS PARTE DE UMA POPULAÇÃO INDIVÍDUOS GERADOS ALEATORIAMENTE , REALIZA-SE A AVALIAÇÃO DE CADA UM (EM RELAÇÃO A FUNÇÃO OBJETIVA), SELECIONA OS MAIS APTOS E PROMOVE OS MANIPULADORES OU OPERADORES GENÉTICOS COMO CRUZAMENTO E MUTAÇÃO, ORIGINANDO NOVAS GERAÇÕES DE INDIVÍDUOS. CADA INDIVÍDUO NA POPULAÇÃO REPRESENTA UMA POSSÍVEL SOLUÇÃO PARA UM DADO PROBLEMA, O QUE O AG FAZ É BUSCAR AQUELA SOLUÇÃO QUE SEJA MUITO BOA OU A MELHOR DO PROBLEMA ANALISADO ATRAVÉS DA CRIAÇÃO DE POPULAÇÃO DE INDIVÍDUOS CADA VEZ MAIS APTOS LEVANDO À OTIMIZAÇÃO DA FUNÇÃO OBJETIVA.
+
+Escolha da População: a inicialização da população é feita da forma mais simples possível, fazendo-se uma escolha aleatória independente para cada indivíduo da população inicial ou por processo heurístico, isto é, simplesmente escolher n indivíduos dentro do espaço de busca.
+
+Avaliação: a função de avaliação, ou função objetiva, é utilizada para determinar a qualidade de um indivíduo como solução do problema, ou seja, é uma forma de mensurar quão aptos estão os indivíduos da população. A função de avaliação deve refletir os objetivos a serem alcançados na resolução de um problema e é derivada diretamente das condições impostas pelo problema.
+
+Seleção: a seleção dos indivíduos da população deve simular o mecanismo de seleção natural, sobrevivência dos mais fortes , em que os pais mais aptos geram mais filhos. O algoritmo permite, também, que alguns indivíduos menos aptos gerem filhos, garantindo a diversidade entre os indivíduos melhores e os piores. Se apenas os melhores indivíduos se reproduzirem a população tenderá a ser cada vez mais semelhante, não ocorrendo à evolução.
+
+Elitismo: visa preservar os melhores cromossomos de uma geração para outra sem alterações, garantindo sempre melhor solução encontrada em qualquer uma das gerações será mantida até o final do processo. Geralmente usa-se nos Algoritmos Genéticos uma taxa de elitismo de 30% do total de indivíduos gerados. 
+
+Cruzamento: o cruzamento ou crossover é em processo de recombinação de partes das seqüências de caracteres entre pares de cromossomos, com o objetivo de gerar nova descendência.Mutação: este operador é responsável pela introdução e manutenção da diversidade genética na população. O operador de mutação inverte os valores de bits, ou seja, muda o valor de dado bit de 1 para 0 ou de 0 para 1, com o objetivo de tentar regenerar algum indivíduo que possa ter sido eliminado de forma inesperada. Para que uma determinada população não sofra muitas alterações, esta operação é processada para um pequeno percentual PM de seus elementos, em torno de 1% de todos os genes.";"Um esquema é uma cadeia de bits que representa um possível cromossomo, usando * para representar “qualquer valor”. Por exemplo, o seguinte esquema:
+
+* 11 *
+
+corresponde aos seguintes quatro cromossomas:
+
+0110
+
+0111
+
+1110
+
+1111";TANTO A MUTAÇÃO COMO O CROSSOVER PODEM DESTRUIR A PRESENÇA DE UM ESQUEMA. EM OUTRAS PALAVRAS, MUTAÇÃO E CROSSOVER SÃO CAPAZES DE REDUZIR O NÚMERO DE OCORRÊNCIAS DE UM ESQUEMA PARTICULAR EM UMA POPULAÇÃO DE CROMOSSOMOS. ELES TAMBÉM SÃO CAPAZES DE AUMENTAR O NÚMERO DE OCORRÊNCIAS DE UM DADO ESQUEMA.;ESQUEMAS DE ORDEM BAIXA E CURTA QUE SÃO MAIS APURADOS DO QUE A APTIDÃO MÉDIA DA POPULAÇÃO APARECERÃO COM REGULARIDADE EXPONENCIALMENTE CRESCENTE NAS GERAÇÕES SUBSEQÜENTES.;A HIPÓTESE DO BLOCO DE CONSTRUÇÃO É UMA CONSEQÜÊNCIA DO TEOREMA DO ESQUEMA, QUE PODE SER DECLARADO COMO “ALGORITMOS GENÉTICOS MANIPULAM ESQUEMAS CURTOS DE ALTA ORDEM PARA ENCONTRAR SOLUÇÕES ÓTIMAS PARA PROBLEMAS”. ESQUEMAS DE APTIDÃO SÃO CONHECIDOS COMO BLOCOS DE CONSTRUÇÃO.;OS ALGORITMOS GENÉTICOS FUNCIONAM BEM QUANDO UM PEQUENO GRUPO DE GENES QUE ESTÃO PRÓXIMOS REPRESENTAM UMA CARACTERÍSTICA QUE CONTRIBUI PARA A ADEQUAÇÃO DE UM CROMOSSOMO. PORTANTO, A REPRESENTAÇÃO ESCOLHIDA PARA ALGORITMOS GENÉTICOS É MUITO IMPORTANTE. A SELEÇÃO ALEATÓRIA DE BITS PARA REPRESENTAR RECURSOS ESPECÍFICOS DE UMA SOLUÇÃO NÃO É SUFICIENTE. OS BITS DEVEM SER ESCOLHIDOS DE FORMA A SE AGRUPAREM NATURALMENTE EM BLOCOS DE CONSTRUÇÃO, QUE OS ALGORITMOS GENÉTICOS SÃO PROJETADOS PARA MANIPULAR.;"Em alguns problemas, alguns blocos construtivos (esquemas curtos, de ordem baixa) podem direcionar erroneamente o algoritmo, levando-o a convergir a pontos sub-ótimos. Este fenômeno é conhecido como decepção. Assim, a hipótese dos blocos construtivos não fornece uma explicação definitiva do porquê os algoritmos genéticos funcionam. Ela é apenas uma indicação do porquê os algoritmos genéticos funcionam para uma certa classe de problemas.
+
+Algumas alternativas foram propostas para combater o problema da decepção. A primeira assume que há algum conhecimento a priori da função objetivo para que seja possível codificá-la de forma apropriada (que forme blocos construtivos “coesos”). A segunda é a utilização de um operador de inversão: selecionam-se 2 pontos em um cromossomo e inverte-se a ordem dos bits entre os pontos selecionados (alterando-se a codificação em conjunto com a operação). A terceira opção é utilizar algoritmos genéticos messy, que diferem do algoritmo genético clássico de várias maneiras: codificação, operadores, presença de cromossomos de tamanho distinto e fases evolutivas.";"Algoritmos genéticos confusos foram desenvolvidos como uma alternativa aos algoritmos genéticos padrão.
+
+Com algoritmos genéticos confusos, cada bit é rotulado com sua posição. Um cromossomo não precisa conter um valor para cada posição e, de fato, uma determinada posição em um cromossomo pode ter mais de um valor.
+
+Cada bit em um cromossomo é representado por um par de números: o primeiro número representa a posição dentro do cromossomo e o segundo número é o valor do bit (0 ou 1).
+
+Assim, o seguinte cromossomo:
+
+((1,0), (2,1), (4,0)
+
+poderia ser um cromossomo com quatro posições de bit, onde a posição do terceiro bit não é especificada. O cromossomo a seguir, em contraste, tem dois valores especificados para a terceira posição:
+
+((1,0), (2,1), (3,1), (3,0), (4,0)
+
+Os MGAs usam o operador de mutação como nos algoritmos genéticos padrão. Em vez de cruzamento, os MGAs usam os operadores de emenda e corte.
+Os MGAs são mais imunes a decepção do que os algoritmos genéticos padrão e mostraram convergir em soluções ótimas com funções extremamente enganosas.";"Escolhemos uma representação que represente a estratégia de um dado “jogador” ou cromossomo na população. Para nosso sistema, permitiremos que cada jogador determine sua movimentação em um determinado turno no jogo com base nos resultados dos três turnos anteriores.
+
+Cada turno no jogo pode ter um dos quatro resultados. Vamos representar cada um desses resultados por um número de 0 a 3:
+
+0: recompensa (ambos os jogadores cooperaram)
+
+1: otário (o jogador coopera e o oponente vence)
+
+2: penalidade (ambos os jogadores desertaram)
+
+3: tentação (o jogador comete e o oponente coopera)
+
+Agora, usando 0 para representar a deserção e 1 para representar a cooperação, uma matriz tridimensional de valores binários pode ser usada para representar uma estratégia. Como existem quatro escolhas possíveis para cada turno, e nossas estratégias serão baseadas nos três turnos anteriores, nossa matriz precisará ser 4 x 4 x 4 = 64 bits. Também incluiremos três bits que representam o comportamento do jogador nos primeiros três turnos, de modo que cada cromossomo será representado por 67 bits. (Vamos colocar os três bits que representam as três primeiras voltas no final do cromossomo).
+
+Assim, um cromossomo que consiste de 67 1s cooperaria em cada movimento, independentemente do comportamento de seu oponente. Da mesma forma, 67 0s significaria que o cromossomo desertou em cada turno.";"Um problema com o algoritmo genético que descrevemos acima para jogar Dilema do Prisioneiro é que as populações tendem a estagnar. Ou seja, uma vez que um cromossomo evolui e alcança uma pontuação muito alta, os cromossomos que são diferentes e pontuam menos do que este tendem a morrer, e a população acabará com todos os cromossomos jogando a mesma estratégia. Em outras palavras, a população carece de diversidade.
+
+A diversidade é uma medida útil que é frequentemente usada em algoritmos genéticos para evitar a estagnação. Como a mutação, também ajuda a evitar os máximos locais.
+
+Por isso, costuma ser uma boa ideia incorporar uma medida de diversidade na métrica de adequação de um algoritmo genético.";EM MUITOS SISTEMAS DE ALGORITMOS GENÉTICOS, A ADEQUAÇÃO DE UM CROMOSSOMO INDIVIDUAL É DETERMINADA PELO TRATAMENTO DOS DADOS CONTIDOS EM SEUS GENES COMO UMA REPRESENTAÇÃO DE UMA POSSÍVEL SOLUÇÃO PARA O PROBLEMA OU, EM ALGUNS CASOS, UMA ESTRATÉGIA PARA LIDAR COM SITUAÇÕES PARTICULARES.;"Há fortes evidências empíricas para sugerir que um dos principais fatores determinantes da evolução da maioria dos comportamentos e habilidades complexos em organismos do mundo real é a existência de predadores. Em um mundo sem predadores, há menos pressão para um bom desempenho e menos necessidade de desenvolver comportamentos sofisticados para sobreviver. Este princípio também se aplica na evolução artificial.
+
+Quando a evolução de duas ou mais espécies se entrelaça dessa maneira, o processo é conhecido como co-evolução.
+
+Como resultado, é claro, o predador precisará se tornar mais rápido ou desenvolver novas habilidades que permitam capturar presas suficientes. Em alguns casos, o ciclo é interrompido quando uma espécie morre ou uma nova espécie a supera.
+
+A co-evolução é um elemento vital dos processos biológicos evolutivos e também pode ser aproveitada em algoritmos genéticos e outros processos que envolvem a evolução artificial."
+Algoritmos genéticos é uma forma de busca local que usa métodos baseados na evolução para fazer mudanças pequenas em uma população de cromossomos, na tentativa de identificar uma solução ótima.;Existem várias representações diferentes que podem ser usadas em algoritmos genéticos e uma das representações mais simples é aquela que foi usada por John Holland: uma sequência de bits. Onde uma série de bits é conhecida como cromossomo e cada bit é conhecido como gene. ;Uma série de bits é conhecida como cromossomo e cada bit é conhecido como gene. A população seria o conjunto de cromossomo, o genótipo é a estrutura do cromossomo e pode ser identificado com o termo estrutura. O fenótipo corresponde a interação do conteúdo genético com o ambiente e fitness é uma métrica necessária para a adequação de um cromossomo.;"O processo de um algoritmo genético é independente da representação e consiste nos seguintes passos:
+
+1. Gerar uma população aleatória de cromossomos (esta é a primeira geração).
+
+2. Se os critérios de terminação estiveram satisfeitos, pare. Caso contrário, continue na etapa 3.
+
+3. Determinar a aptidão de cada cromossomo.
+
+4. Aplique o cruzamento e a mutação em cromossomos selecionados da geração atual para gerar uma nova população de cromossomos (a próxima geração).
+
+5. Volte para o passo 2.";"O crossover é o processo de cruzamento de cromossomos para gerar a próxima geração. Ele é aplicado a dois cromossomos com o mesmo comprimento da seguinte forma:
+
+1. Selecione um pronto de cruzamento aleatório.
+
+2. Quebre cada cromossomo em duas partes, dividindo-o no ponto de cruzamento.
+
+3. Recombine os cromossomos quebrados combinando a frente de uma com a parte de trás da outra, e vice-versa, para produzir dois novos cromossomos.";No crossover de um ponto, um ponto de cruzamento pode ser escolhido entre o sexto e o sétimo genes, esse é a forma mais comumente usada, enquanto que no crossover de dois pontos, dois pontos são escolhidos, dividindo os cromossomos em duas seções, já no crossover uniforme uma probabilidade, p, é usada para determinar se um dado bit do pai 1 será usado, ou do pai 2, ou seja, um filho pode receber quaisquer bits aleatórios de cada um de seus pais.;O operador de mutação é um operador que foi introduzido para evitar problemas com máximos locais. É um operador unário, isto é, aplicada a apenas um argumento, um único gene, geralmente aplicado com uma baixa probabilidade. A mutação envolve simplesmente inverter o valor de um bit em um cromossomo.;Normalmente os critérios mais comuns para o encerramento da execução de um algoritmo genético. Um limite é colocado no número de gerações, após as quais a união é considerada terminada, outro critério é que a execução pode parar quando uma solução particular foi alcançada, ou quando o nível de aptidão mais alto na população alcançou um valor particular.;Seja f(x) = sin(x). Para encontrar o máximo dessa função usando algoritmos genéticos vamos representar cada cromossomo como sendo um valor possível de x. O primeiro passo é gerar uma população aleatória, será a nossa primeira geração. Depois temos que calcular a adequação de um cromossomo, após a adequação atribuímos a aptidão como um valor numérico. A taxa de aptidão de um cromossomo é a aptidão do cromossomo como uma porcentagem da aptidão total da população. Agora executamos uma única etapa do nosso algoritmo genético para produzir a próxima geração. O primeiro passo é selecionar quais cromossomos serão reproduzidos. Encerramos quando o máximo for encontrado.;Um esquema é uma cadeia de bits que representa um possível cromossomo, usando * para representar “qualquer valor”. Foi inventado por John Holland para fornecer uma explicação para algoritmos genéticos mais rigorosos.;O efeito é que tanto a mutação como o crossover pode destruir a presença de um esquema, ou seja, mutação e crossover são capazes de reduzir o número de ocorrências de um esquema particular em uma população de cromossomos. Eles também são capazes de aumentar o número de ocorrência de um dado esquema.;O teorema dos esquemas de Holland diz que esquemas de ordem baixa e curta que são mais apurados do que a aptidão média da população aparecerão com regularidade exponencial crescente nas gerações subsequentes.;São esquemas curtos de baixa ordem e alta adequação. A hipótese do bloco de construção é uma consequência do teorema do esquema, que pode ser declarado como “Algoritmos genéticos manipulam esquemas curtos de baixa ordem e alta aptidão para encontrar soluções ótimas para problemas”. Em outras palavras, os algoritmos genéticos funcionam bem quando um pequeno grupo de genes que estão próximos representa uma característica que contribui para a adequação de um cromossomo.;Os bits devem ser escolhidos de forma a se agruparem naturalmente em blocos de construção, que os algoritmos genéticos são projetados para manipular.;A decepção é um problema enfrentado pelos algoritmos genéticos que ocorrem quando dois blocos de construção são combinados, mas o bloco gerado é menos adequado do que os dois blocos utilizados. Desta forma, os algoritmos genéticos podem ser enganados ou enganados por alguns blocos de construção em direção a solução abaixo do ideal. Uma das maneiras de minimizar os efeitos da decepção é usar a inversão, que é um operador unário que inverte a ordem de um subconjunto dos bits dentro de um cromossomo. Outra forma de evitar a decepção é usar algoritmos genéticos confusos.;Diferente dos algoritmos genéticos padrão os MGAs cada bit é rotulado com sua posição. Um cromossomo não precisa conter um valor para cada posição, uma determina posição em um cromossomo pode ter mais de um valor. Diferente da representação dos algoritmos genéticos padrão os MGAs representa cada bit em um cromossomo por um par de números, o primeiro número representa a posição dentro do cromossomo e o segundo número é o valor do bit.;Usando 0 para representar a deserção e 1 para representar a cooperação, uma matriz tridimensional de valores binários pode ser usada para representar uma estratégia. Como existem quatro escolhas possíveis para cada turno, e nossas estratégias serão baseadas nos três turnos anteriores, nossa matriz precisará ser 4 x 4 x 4 = 67 bits. Também incluiremos três bits que representam o comportamento do jogador no turno. Dessa forma podemos representar o “dilema do prisioneiro” por meio de cromossomos de 67 bits.;Sem a diversidade algoritmos genéticos não podem evitar a estagnação. É um problema por que se houver estagnação, uma vez que um cromossomo evolui e alcança uma pontuação muito alta os cromossomos que são diferentes e pontuam menos do que esta tendem a morrer, e a população acabará com todos os cromossomos realizando a mesma estratégia. Por isso, costuma ser uma boa ideia incorporar uma medida de diversidade na métrica de adequação de um algoritmo genético.;Os cromossomos podem representar uma possível solução para um problema, ou uma estratégia para lidar com situações particulares. No caso dos biomorfos de Dawkins os genes contidos em cada cromossomo não eram interpretados como uma estratégia ou uma solução para um problema, mas como uma representação visual de uma imagem que se assemelhava a uma criatura viva, ou seja, um biomorfo.;Em um mundo sem predadores, há menos pressão para um bom desempenho e menos necessidade de desenvolver comportamento sofisticado para sobreviver. Desta forma a inclusão de predadores pode deixar o sistema funcionando muito melhor do que sem predadores. Quando a evolução de duas ou mais espécies se entrelaça dessa maneira, o processo é conhecido mo coevolução. Coevolução pode ser pensada como uma corrida armamentista, quando um país desenvolve armas melhores, seus inimigos precisam desenvolver uma arma similarmente poderosa ou uma defesa apropriada. Da mesma forma que o desenvolvimento militar de um país faz com que outros países desenvolvam capacidades semelhantes, a coevolução em animais significa que, se um predador desenvolve a capacidade de correr mais rápido, sua presa deve corresponder à sua velocidade, ou desenvolver outra defesa, ou será eliminado.
+Algoritmos genéticos são uma forma de busca local que usa métodos baseados na evolução para fazer pequenas mudanças em uma população de cromossomos, na tentativa de identificar uma solução ótima.;"Temos visto várias representações diferentes que podem ser usadas em técnicas evolutivas como algoritmos genéticos. A programação genética é usada para desenvolver expressões S, que podem ser usadas como programas LISP para resolver problemas. Os sistemas classificadores usam uma cadeia de números que representam propriedades do ambiente e símbolos que representam respostas a essas propriedades.
+
+ A representação mais simples para algoritmos genéticos é aquela que foi usada por John Holland: uma série de bits. Uma sequência de bits é conhecida como um cromossomo e cada bit é conhecido como um gene. Ambos os termos são emprestados diretamente da genética e ilustram a maneira próxima em que algoritmos genéticos espelham processos biológicos.";"Genes: Gene é cada bit de uma cadeia de bits.
+
+Cromossomos: em algoritmos genéticos os cromossomos é uma cadeia de bits
+
+População: População é um conjunto de cromossomos que compõem uma geração.
+
+Genótipo: Informação Genética, responsável pelo fenótipo.
+
+Fenótipo: É a forma física da criatura ( combinação de cromossomos)
+
+Fitness: É uma função de avaliação.";"O processo para executar um algoritmo genético é o seguinte:
+
+1. Gerar uma população aleatória de cromossomos (esta é a primeira geração).
+
+2. Se os critérios de terminação estiverem satisfeitos, pare. Caso contrário, continue na etapa 3.
+
+3. Determine a adequação de cada cromossomo.
+
+4. Aplique crossover e mutação aos cromossomos selecionados da geração atual para gerar uma nova população de cromossomos - a próxima geração.5. Volte ao passo 2";"O crossover é o cruzamento entre cromossomos de uma mesma geração. O operador de crossover é aplicado a dois cromossomos com o mesmo comprimento da seguinte forma:
+
+1. Selecione um ponto de cruzamento aleatório.
+
+2. Quebre cada cromossomo em duas partes, dividindo-o no ponto de cruzamento.3. Recombine os cromossomos quebrados combinando o início de um com o final do outro, e vice-versa, para produzir dois novos cromossomos.";"O crossover de um ponto define apenas um ponto de divisão no cromossomo, podendo no sexto ou sétimo gene, depois pegar a parte maior e cruza com outro cromossomo que fez este mesmo processo. 
+
+No cruzamento de dois pontos, dois pontos são escolhidos que dividem os cromossomos em duas seções, com as seções externas consideradas unidas para transformar o cromossomo em um anel. 
+
+Outra forma de cruzamento é crossover uniforme. Aqui, uma probabilidade, p, é usada para determinar se um dado bit do pai 1 será usado, ou do pai 2. Em outras palavras, um filho pode receber quaisquer bits aleatórios de cada um de seus pais.";A MUTAÇÃO É UM OPERADOR UNÁRIO (ISTO É, É APLICADA A APENAS UM ARGUMENTO - UM ÚNICO GENE) QUE É GERALMENTE APLICADO COM UMA BAIXA PROBABILIDADE, COMO 0,01 OU 0,001. A MUTAÇÃO ENVOLVE SIMPLESMENTE INVERTER O VALOR DE UM BIT EM UM CROMOSSOMO. POR EXEMPLO, COM UMA TAXA DE MUTAÇÃO DE 0,01, PODE SER ESPERADO QUE UM GENE EM UM CROMOSSOMO DE 100 GENES POSSA SER REVERTIDO.;"Normalmente existem duas maneiras em que uma execução de um algoritmo genético é finalizada. Normalmente, um limite é colocado no número de gerações, após o qual a corrida é considerada como concluída.
+
+Com alguns problemas, a execução pode parar quando uma determinada solução é atingida ou quando o nível de condicionamento mais alto da população atinge um determinado valor. Por exemplo, um algoritmo genético pode ser usado para resolver uma função matemática. Nesse caso, fica claro que a execução pode parar quando a solução correta for atingida, para a qual pode ser facilmente testada.
+
+Em muitos casos, os algoritmos genéticos são usados ​​para resolver problemas que possuem uma solução objetiva, caso em que o algoritmo pode parar quando atinge essa solução. Em outros casos, eles são usados ​​para propósitos mais abstratos, como gerar imagens interessantes. Nestes casos, o julgamento humano deve ser usado para determinar quando terminar.";"Algoritmos Genéticos parte de uma população indivíduos gerados aleatoriamente (configurações iniciais de um problema), realiza-se a avaliação de cada um (em relação a função objetiva), seleciona os mais aptos e promove os manipuladores ou operadores genéticos como cruzamento e mutação, originando novas gerações de indivíduos. Cada indivíduo na população representa uma possível solução para um dado problema, o que o AG faz é buscar aquela solução que seja muito boa ou a melhor do problema analisado através da criação de população de indivíduos cada vez mais aptos levando à otimização da função objetiva.
+
+	*
+
+Escolha da População: a inicialização da população é feita da forma mais simples possível, fazendo-se uma escolha aleatória independente para cada indivíduo da população inicial ou por processo heurístico, isto é, simplesmente escolher n indivíduos dentro do espaço de busca.
+
+	*
+
+Avaliação: a função de avaliação, ou função objetiva, é utilizada para determinar a qualidade de um indivíduo como solução do problema, ou seja, é uma forma de mensurar quão aptos estão os indivíduos da população. A função de avaliação deve refletir os objetivos a serem alcançados na resolução de um problema e é derivada diretamente das condições impostas pelo problema.
+
+	*
+
+Seleção: a seleção dos indivíduos da população deve simular o mecanismo de seleção natural, sobrevivência dos mais fortes , em que os pais mais aptos geram mais filhos. O algoritmo permite, também, que alguns indivíduos menos aptos gerem filhos, garantindo a diversidade entre os indivíduos melhores e os piores. Se apenas os melhores indivíduos se reproduzirem a população tenderá a ser cada vez mais semelhante, não ocorrendo à evolução.
+
+	*
+
+Elitismo: visa preservar os melhores cromossomos de uma geração para outra sem alterações, garantindo sempre melhor solução encontrada em qualquer uma das gerações será mantida até o final do processo. Geralmente usa-se nos Algoritmos Genéticos uma taxa de elitismo de 30% do total de indivíduos gerados. 
+
+	*
+
+Cruzamento: o cruzamento ou crossover é em processo de recombinação de partes das seqüências de caracteres entre pares de cromossomos, com o objetivo de gerar nova descendência.
+	*
+
+	*
+
+Mutação: este operador é responsável pela introdução e manutenção da diversidade genética na população. O operador de mutação inverte os valores de bits, ou seja, muda o valor de dado bit de 1 para 0 ou de 0 para 1, com o objetivo de tentar regenerar algum indivíduo que possa ter sido eliminado de forma inesperada. Para que uma determinada população não sofra muitas alterações, esta operação é processada para um pequeno percentual PM de seus elementos, em torno de 1% de todos os genes.";"Um esquema é uma cadeia de bits que representa um possível cromossomo, usando * para representar “qualquer valor”. Por exemplo, o seguinte esquema:
+
+* 11
+
+corresponde aos seguintes dois cromossomos:
+
+111
+
+011";TANTO A MUTAÇÃO COMO O CROSSOVER PODEM DESTRUIR A PRESENÇA DE UM ESQUEMA. EM OUTRAS PALAVRAS, MUTAÇÃO E CROSSOVER SÃO CAPAZES DE REDUZIR O NÚMERO DE OCORRÊNCIAS DE UM ESQUEMA PARTICULAR EM UMA POPULAÇÃO DE CROMOSSOMOS. ELES TAMBÉM SÃO CAPAZES DE AUMENTAR O NÚMERO DE OCORRÊNCIAS DE UM DADO ESQUEMA.;“ESQUEMAS DE ORDEM BAIXA E CURTA QUE SÃO MAIS APURADOS DO QUE A APTIDÃO MÉDIA DA POPULAÇÃO APARECERÃO COM REGULARIDADE EXPONENCIALMENTE CRESCENTE NAS GERAÇÕES SUBSEQÜENTES”.;A HIPÓTESE DO BLOCO DE CONSTRUÇÃO É UMA CONSEQÜÊNCIA DO TEOREMA DO ESQUEMA, QUE PODE SER DECLARADO COMO “ALGORITMOS GENÉTICOS MANIPULAM ESQUEMAS CURTOS DE ALTA ORDEM PARA ENCONTRAR SOLUÇÕES ÓTIMAS PARA PROBLEMAS”. ESQUEMAS DE APTIDÃO SÃO CONHECIDOS COMO BLOCOS DE CONSTRUÇÃO.;OS ALGORITMOS GENÉTICOS FUNCIONAM BEM QUANDO UM PEQUENO GRUPO DE GENES QUE ESTÃO PRÓXIMOS REPRESENTAM UMA CARACTERÍSTICA QUE CONTRIBUI PARA A ADEQUAÇÃO DE UM CROMOSSOMO. PORTANTO, A REPRESENTAÇÃO ESCOLHIDA PARA ALGORITMOS GENÉTICOS É MUITO IMPORTANTE. A SELEÇÃO ALEATÓRIA DE BITS PARA REPRESENTAR RECURSOS ESPECÍFICOS DE UMA SOLUÇÃO NÃO É SUFICIENTE. OS BITS DEVEM SER ESCOLHIDOS DE FORMA A SE AGRUPAREM NATURALMENTE EM BLOCOS DE CONSTRUÇÃO, QUE OS ALGORITMOS GENÉTICOS SÃO PROJETADOS PARA MANIPULAR.;"Em alguns problemas, alguns blocos construtivos (esquemas curtos, de ordem baixa) podem direcionar erroneamente o algoritmo, levando-o a convergir a pontos sub-ótimos. Este fenômeno é conhecido como decepção. Assim, a hipótese dos blocos construtivos não fornece uma explicação definitiva do porquê os algoritmos genéticos funcionam. Ela é apenas uma indicação do porquê os algoritmos genéticos funcionam para uma certa classe de problemas.
+
+Algumas alternativas foram propostas para combater o problema da decepção. A primeira assume que há algum conhecimento a priori da função objetivo para que seja possível codifica-la de forma apropriada (que forme blocos construtivos “coesos”). A segunda é a utilização de um operador de inversão: selecionam-se 2 pontos em um cromossomo e inverte-se a ordem dos bits entre os pontos selecionados (alterando-se a codificação em conjunto com a operação). A terceira opção é utilizar algoritmos genéticos messy, que diferem do algoritmo genético clássico de várias maneiras: codificação, operadores, presença de cromossomos de tamanho distinto e fases evolutivas.";"Algoritmos genéticos confusos foram desenvolvidos como uma alternativa aos algoritmos genéticos padrão.
+
+Com algoritmos genéticos confusos (MGAs), cada bit é rotulado com sua posição. Um cromossomo não precisa conter um valor para cada posição e, de fato, uma determinada posição em um cromossomo pode ter mais de um valor.
+
+Cada bit em um cromossomo é representado por um par de números: o primeiro número representa a posição dentro do cromossomo e o segundo número é o valor do bit (0 ou 1).
+
+Assim, o seguinte cromossomo:
+
+((1,0), (2,1), (4,0)
+
+poderia ser um cromossomo com quatro posições de bit, onde a posição do terceiro bit não é especificada. O cromossomo a seguir, em contraste, tem dois valores especificados para a terceira posição:
+
+((1,0), (2,1), (3,1), (3,0), (4,0)
+
+Os MGAs usam o operador de mutação como nos algoritmos genéticos padrão. Em vez de cruzamento, os MGAs usam os operadores de emenda e corte.
+Os MGAs são mais imunes a decepção do que os algoritmos genéticos padrão e mostraram convergir em soluções ótimas com funções extremamente enganosas.";"Escolhemos uma representação que represente a estratégia de um dado “jogador” ou cromossomo na população. Para nosso sistema, permitiremos que cada jogador determine sua movimentação em um determinado turno no jogo com base nos resultados dos três turnos anteriores.
+
+Cada turno no jogo pode ter um dos quatro resultados. Vamos representar cada um desses resultados por um número de 0 a 3:
+
+0: recompensa (ambos os jogadores cooperaram)
+
+1: otário (o jogador coopera e o oponente vence)
+
+2: penalidade (ambos os jogadores desertaram)
+
+3: tentação (o jogador comete e o oponente coopera)
+
+Agora, usando 0 para representar a deserção e 1 para representar a cooperação, uma matriz tridimensional de valores binários pode ser usada para representar uma estratégia. Como existem quatro escolhas possíveis para cada turno, e nossas estratégias serão baseadas nos três turnos anteriores, nossa matriz precisará ser 4 x 4 x 4 = 64 bits. Também incluiremos três bits que representam o comportamento do jogador nos primeiros três turnos, de modo que cada cromossomo será representado por 67 bits. (Vamos colocar os três bits que representam as três primeiras voltas no final do cromossomo).
+
+Assim, um cromossomo que consiste de 67 1s cooperaria em cada movimento, independentemente do comportamento de seu oponente. Da mesma forma, 67 0s significaria que o cromossomo desertou em cada turno.";"Um problema com o algoritmo genético que descrevemos acima para jogar Dilema do Prisioneiro é que as populações tendem a estagnar. Ou seja, uma vez que um cromossomo evolui e alcança uma pontuação muito alta, os cromossomos que são diferentes e pontuam menos do que este tendem a morrer, e a população acabará com todos os cromossomos jogando a mesma estratégia. Em outras palavras, a população carece de diversidade.
+
+A diversidade é uma medida útil que é frequentemente usada em algoritmos genéticos para evitar a estagnação. Como a mutação, também ajuda a evitar os máximos locais.
+
+Por isso, costuma ser uma boa ideia incorporar uma medida de diversidade na métrica de adequação de um algoritmo genético.";EM MUITOS SISTEMAS DE ALGORITMOS GENÉTICOS, A ADEQUAÇÃO DE UM CROMOSSOMO INDIVIDUAL É DETERMINADA PELO TRATAMENTO DOS DADOS CONTIDOS EM SEUS GENES COMO UMA REPRESENTAÇÃO DE UMA POSSÍVEL SOLUÇÃO PARA O PROBLEMA OU, EM ALGUNS CASOS, UMA ESTRATÉGIA PARA LIDAR COM SITUAÇÕES PARTICULARES.;"Há fortes evidências empíricas para sugerir que um dos principais fatores determinantes da evolução da maioria dos comportamentos e habilidades complexos em organismos do mundo real é a existência de predadores. Em um mundo sem predadores, há menos pressão para um bom desempenho e menos necessidade de desenvolver comportamentos sofisticados para sobreviver. Este princípio também se aplica na evolução artificial
+
+Quando a evolução de duas ou mais espécies se entrelaça dessa maneira, o processo é conhecido como co-evolução.
+
+Como resultado, é claro, o predador precisará se tornar mais rápido ou desenvolver novas habilidades que permitam capturar presas suficientes. Em alguns casos, o ciclo é interrompido quando uma espécie morre ou uma nova espécie a supera.
+
+A co-evolução é um elemento vital dos processos biológicos evolutivos e também pode ser aproveitada em algoritmos genéticos e outros processos que envolvem a evolução artificial."
+Algoritmo genético é uma busca que utiliza métodos baseados em evolução para fazer modificações na tentativa de atingir uma solução ótima.;A representação utilizada pelos algoritmos genéticos são sistemas classificadores que utilizam números para representar propriedades do sistema e suas respostas.;"Genes: Composição dos cromossomos
+
+Cromossomos: Representação de um indivíduo dentro da população
+
+População: Conjunto de cromossomos
+
+Genótipo: Construção genética do indivíduo
+
+Fenótipo: Característica apresentadas pelo indivíduo
+
+Fitness: Sucesso reprodutivo do indivíduo";"O processo de execução de um algoritmo genético segue os passos:
+
+1) Geração de uma população aleatória de cromossomos.
+
+2) Pare caso os critérios de terminação estiverem satisfeitos. Continue caso contrário.
+
+3) A adequação de cada cromossomo é determinada.
+
+4) Aplicação da mutação e crossover aos cromossomos da geração atual para geração de uma nova população.
+
+5) Retorne ao passo 2.";"O crossover ocorre quando há o cruzamento entre cromossomos. Ele é aplicado nos seguintes passos:
+
+1) Seleção do ponto de cruzamento.
+
+2) Quebra do cromossomo no ponto de cruzamento.
+
+3) Combinação dos cromossomos de maneira inversa, i.e., frente de um com as costas do outro.";"Crossover de um ponto: Um ponto de divisão no cromossomo, a parte maior é selecionada para o cruzamento com outro cromossomo.
+
+Crossover de dois pontos: Dois pontos de divisão escolhidos, uma vez unidas as seções externas, são transformadas em um cromossomo anel.
+
+Crossover uniforme: Uma probabilidade determina qual dados os filhos irão receber dos pais.";O operação de mutação é um operador aplicado quando há uma baixa probabilidade. A mutação ocorrer a partir da inversão do valor do bit do cromossomo.;OS critérios mais comuns para o encerramento da execução de um algoritmo genético são a obtenção de uma solução esperada, ou de uma solução objetiva, no segundo caso o julgamento humano deve ser utilizado para confirmar a parada.;"É possível encontrar o máximo de uma função matemática usando algoritmos genéricos seguindo os passos: escolha da população, avaliação, seleção, elitismo, cruzamento e mutação.
+
+Aa escolha da população pode ser aleatória ou heurística. Na função objetiva deve-se mensurar quão adaptados estão os indivíduos da população. Na seleção apenas os indivíduos adaptados devem ser selecionados. O elitismo tem que preservar os melhores cromossomos da geração. Já o crossover recombina os pares de cromossomos. Por fim, a mutação é responsável pela manutenção da diversidade genética da população.";Esquemas são cadieas de bits que representam um cromossomo. Por exemplo, o esquema: *01* pode representar quatro cromossomos: 0010, 0011, 1010, 1011.;O efeito da mutação e crossover sobre os esquemas é a possível redução do número de ocorrências de um esquema específico em uma população.;"O ""teorema dos esquemas"" de Holland diz que esquemas de baixa ordem são mais apurados do que a aptidão em média da população e aparecerão com mais frequência.";Os blocos de construção são esquemas de aptidão que é uma consequencia do teorema dos esquemas.;Os bits para representar uma determinada caracterı́stica devem ser selecionadas para que o agrupamento seja natural em blocos de construção que possam ser manipulados pelos algoritmos genéticos.;"""Decepção"" é quando blocos construtivos direcionam o algoritmo para uma solução errada. Para minimizar os efeitos da decepção, podemos assumir um conhecimento a priori, ou utilizar um operador de inversão ou utilizar algoritmos genéticos messy.";"A diferença entre os algoritmos genéticos padrão e os MGAs (Messy Genetic Algorithms) é que em MGAs os bits são rotulados pelas suas posições, e são representados por um par no qual o primeiro número representa a posição e o segundo o valor. Finalmente, MGAs são mais frágeis à ""depressões"", podendo gerar soluções erroneas.";Em cada turno, os jogadores tem quatro ações possíveis, sendo elas: todos os jogadores cooperam, o jogador coopera e perde, todos os jogadores desertaram ou o jogador comete e o oponente coopera. Um cromossomo de 67 bits cooperaria em cada movimentação independe da ação do seu oponente se todos os bits fossem 1. Se forem todos 0, o cromossomo desertou em todos os turnos.;A falta de diversidade de uma população é um problema pois pode gerar estagnação no algoritmo genético. Os cromossomos que se adaptam primeiro tendem a matar os outros que vem depois.;Os cromossomos podem representar o tratamento dado as informações contidas nos genes em um algoritmo genético. São úteis para o tratamento de situações específicas.;A introdução de predadores faz com que haja mais pressão para uma melhora de desempenho e desenvolvimento de mecanismos de sobrevivência. A coevolução acontece quando duas ou mais espécies se entrelaçam. O predador também terá que evoluir uma vez que as presas evoluirem, o ciclo é interrompido quando uma espécie é extinta.
+Algoritmos genéticos são uma forma de busca local que usa métodos baseados na evolução para fazer pequenas mudanças em uma população de cromossomos, na tentativa de identificar uma solução ótima.;"Temos visto várias representações diferentes que podem ser usadas em técnicas evolutivas como algoritmos genéticos. A programação genética é usada para desenvolver expressões S, que podem ser usadas como programas LISP para resolver problemas. Os sistemas classificadores usam uma cadeia de números que representam propriedades do ambiente e símbolos que representam respostas a essas propriedades.
+
+A representação mais simples para algoritmos genéticos é aquela que foi usada por John Holland: uma série de bits. Uma sequência de bits é conhecida como um cromossomo e cada bit é conhecido como um gene. Ambos os termos são emprestados diretamente da genética e ilustram a maneira próxima em que algoritmos genéticos espelham processos biológicos.";A população consiste de um conjunto de cromossomos, cada qual, como vimos, é composto de genes. Um cromossomo é geralmente usado para representar um “indivíduo” completo dentro da população - em outras palavras, uma representação completa de uma solução ou uma classificação. Também é possível combinar cromossomos juntos para formar criaturas, o que reflete mais de perto a genética real, porque cada indivíduo no mundo real tem um número de cromossomos.;"O processo para executar um algoritmo genético é o seguinte:
+
+1. Gerar uma população aleatória de cromossomos (esta é a primeira geração).
+
+2. Se os critérios de terminação estiverem satisfeitos, pare. Caso contrário, continue na etapa 3.
+
+3. Determine a adequação de cada cromossomo.
+
+4. Aplique crossover e mutação aos cromossomos selecionados da geração atual para gerar uma nova população de cromossomos - a próxima geração.
+
+5. Volte ao passo 2.
+
+O tamanho da população deve ser determinado com antecedência. Normalmente, o tamanho da população permanece constante de uma geração para a próxima. Em algumas situações, pode ser útil ter uma população que mude de tamanho.
+
+O tamanho de cada cromossomo deve permanecer o mesmo para o cruzamento a ser aplicado. É possível executar algoritmos genéticos com tamanhos de cromossomos variáveis, mas isso é incomum.
+
+Tipicamente, os cromossomos mais aptos são selecionados em cada geração para se acasalarem, e cada par de cromossomos é permitido produzir dois descendentes. O conjunto resultante de cromossomas descendentes substitui a geração anterior.
+
+Também é possível permitir que pais particularmente aptos produzam relativamente mais descendentes e permitam que certos membros de uma geração sobrevivam à próxima geração. Para a maior parte deste capítulo, vamos supor que cada par de pais produz dois descendentes e que esses descendentes substituam os pais.";"O crossover é o cruzamento entre cromossomos de uma mesma geração. O operador de crossover é aplicado a dois cromossomos com o mesmo comprimento da seguinte forma:
+
+1. Selecione um ponto de cruzamento aleatório.
+
+2. Quebre cada cromossomo em duas partes, dividindo-o no ponto de cruzamento.
+
+3. Recombine os cromossomos quebrados combinando a frente de um com as costas do outro, e vice-versa, para produzir dois novos
+
+cromossomos.";"O crossover de um ponto define apenas um ponto de divisão no cromossomo, podendo no sexto ou sétimo gene, depois pegar a parte maior e cruza com outro cromossomo que fez este mesmo processo.
+
+No cruzamento de dois pontos, dois pontos são escolhidos que dividem os cromossomos em duas seções, com as seções externas consideradas unidas para transformar o cromossomo em um anel.
+
+Outra forma de cruzamento é crossover uniforme. Aqui, uma probabilidade, p, é usada para determinar se um dado bit do pai 1 será usado, ou do pai 2. Em outras palavras, um filho pode receber quaisquer bits aleatórios de cada um de seus pais.";A mutação é um operador unário (isto é, é aplicada a apenas um argumento - um único gene) que é geralmente aplicado com uma baixa probabilidade, como 0,01 ou 0,001. A mutação envolve simplesmente inverter o valor de um bit em um cromossomo. Por exemplo, com uma taxa de mutação de 0,01, pode ser esperado que um gene em um cromossomo de 100 genes possa ser revertido.;"Normalmente existem duas maneiras em que uma execução de um algoritmo genético é finalizada. Normalmente, um limite é colocado no número de gerações, após o qual a corrida é considerada como concluída.
+
+Com alguns problemas, a execução pode parar quando uma determinada solução é atingida ou quando o nível de condicionamento mais alto da população atinge um determinado valor. Por exemplo, um algoritmo genético pode ser usado para resolver uma função matemática. Nesse caso, fica claro que a execução pode parar quando a solução correta for atingida, para a qual pode ser facilmente testada.
+
+Em muitos casos, os algoritmos genéticos são usados ​​para resolver problemas que possuem uma solução objetiva, caso em que o algoritmo pode parar quando atinge essa solução. Em outros casos, eles são usados ​​para propósitos mais abstratos, como gerar imagens interessantes. Nestes casos, o julgamento humano deve ser usado para determinar quando terminar.";"Algoritmos Genéticos parte de uma população indivíduos gerados aleatoriamente (configurações iniciais de um problema), realiza-se a avaliação de cada um (em relação a função objetiva), seleciona os mais aptos e promove os manipuladores ou operadores genéticos como cruzamento e mutação, originando novas gerações de indivíduos. Cada indivíduo na população representa uma possível solução para um dado problema, o que o AG faz é buscar aquela solução que seja muito boa ou a melhor do problema analisado através da criação de população de indivíduos cada vez mais aptos levando à otimização da função objetiva.
+
+ESCOLHA DA POPULAÇÃO: a inicialização da população é feita da forma mais simples possível, fazendo-se uma escolha aleatória independente para cada indivíduo da população inicial ou por processo heurístico, isto é, simplesmente escolher _n_ indivíduos dentro do espaço de busca.
+
+AVALIAÇÃO: a função de avaliação, ou função objetiva, é utilizada para determinar a qualidade de um indivíduo como solução do problema, ou seja, é uma forma de mensurar quão aptos estão os indivíduos da população. A função de avaliação deve refletir os objetivos a serem alcançados na resolução de um problema e é derivada diretamente das condições impostas pelo problema.
+
+SELEÇÃO: a seleção dos indivíduos da população deve simular o mecanismo de seleção natural, sobrevivência dos mais fortes , em que os pais mais aptos geram mais filhos. O algoritmo permite, também, que alguns indivíduos menos aptos gerem filhos, garantindo a diversidade entre os indivíduos melhores e os piores. Se apenas os melhores indivíduos se reproduzirem a população tenderá a ser cada vez mais semelhante, não ocorrendo à evolução.
+
+ELITISMO: visa preservar os melhores cromossomos de uma geração para outra sem alterações, garantindo sempre melhor solução encontrada em qualquer uma das gerações será mantida até o final do processo. Geralmente usa-se nos Algoritmos Genéticos uma taxa de elitismo de 30% do total de indivíduos gerados.
+
+CRUZAMENTO: o cruzamento ou crossover é em processo de recombinação de partes das seqüências de caracteres entre pares de cromossomos, com o objetivo de gerar nova descendência.
+
+MUTAÇÃO: este operador é responsável pela introdução e manutenção da diversidade genética na população. O operador de mutação inverte os valores de bits, ou seja, muda o valor de dado bit de 1 para 0 ou de 0 para 1, com o objetivo de tentar regenerar algum indivíduo que possa ter sido eliminado de forma inesperada. Para que uma determinada população não sofra muitas alterações, esta operação é processada para um pequeno percentual PM de seus elementos, em torno de 1% de todos os genes.";"Um esquema é uma cadeia de bits que representa um possível cromossomo, usando * para representar “qualquer valor”. 
+
+Por exemplo, o seguinte esquema: 
+
+* 11 *
+
+corresponde aos seguintes quatro cromossomas:
+
+0110
+
+0111
+
+1110
+
+1111";Tanto a mutação como o crossover podem destruir a presença de um esquema. Em outras palavras, mutação e crossover são capazes de reduzir o número de ocorrências de um esquema particular em uma população de cromossomos. Eles também são capazes de aumentar o número de ocorrências de um dado esquema.;“Esquemas de ordem baixa e curta que são mais apurados do que a aptidão média da população aparecerão com regularidade exponencialmente crescente nas gerações subseqüentes”.;A hipótese do bloco de construção é uma conseqüência do teorema do esquema, que pode ser declarado como “Algoritmos genéticos manipulam esquemas curtos de alta ordem para encontrar soluções ótimas para problemas”. Esquemas de aptidão são conhecidos como blocos de construção.;Os algoritmos genéticos funcionam bem quando um pequeno grupo de genes que estão próximos representam uma característica que contribui para a adequação de um cromossomo. Portanto, a representação escolhida para algoritmos genéticos é muito importante. A seleção aleatória de bits para representar recursos específicos de uma solução não é suficiente. Os bits devem ser escolhidos de forma a se agruparem naturalmente em blocos de construção, que os algoritmos genéticos são projetados para manipular.;"Em alguns problemas, alguns blocos construtivos (esquemas curtos, de ordem baixa) podem direcionar erroneamente o algoritmo, levando-o a convergir a pontos sub-ótimos. Este fenômeno é conhecido como decepção. Assim, a hipótese dos blocos construtivos não fornece uma explicação definitiva do porquê os algoritmos genéticos funcionam. Ela é apenas uma indicação do porquê os algoritmos genéticos funcionam para uma certa classe de problemas.
+
+Algumas alternativas foram propostas para combater o problema da decepção. A primeira assume que há algum conhecimento a priori da função objetivo para que seja possível codificá-la de forma apropriada (que forme blocos construtivos “coesos”). A segunda é a utilização de um operador de inversão: selecionam-se 2 pontos em um cromossomo e inverte-se a ordem dos bits entre os pontos selecionados (alterando-se a codificação em conjunto com a operação). A terceira opção é utilizar algoritmos genéticos messy, que diferem do algoritmo genético clássico de várias maneiras: codificação, operadores, presença de cromossomos de tamanho distinto e fases evolutivas.";"Algoritmos genéticos confusos foram desenvolvidos como uma alternativa aos algoritmos genéticos padrão.
+
+Com algoritmos genéticos confusos (MGAs), cada bit é rotulado com sua posição. Um cromossomo não precisa conter um valor para cada posição e, de fato, uma determinada posição em um cromossomo pode ter mais de um valor.
+
+Cada bit em um cromossomo é representado por um par de números: o primeiro número representa a posição dentro do cromossomo e o segundo número é o valor do bit (0 ou 1).
+
+Assim, o seguinte cromossomo:
+
+((1,0), (2,1), (4,0)
+
+poderia ser um cromossomo com quatro posições de bit, onde a posição do terceiro bit não é especificada. O cromossomo a seguir, em contraste, tem dois valores especificados para a terceira posição:
+
+((1,0), (2,1), (3,1), (3,0), (4,0)
+
+Os MGAs usam o operador de mutação como nos algoritmos genéticos padrão. Em vez de cruzamento, os MGAs usam os operadores de emenda e corte.
+
+Os MGAs são mais imunes a _decepção_ do que os algoritmos genéticos padrão e mostraram convergir em soluções ótimas com funções extremamente enganosas.";"Escolhemos uma representação que represente a estratégia de um dado “jogador” ou cromossomo na população. Para nosso sistema, permitiremos que cada jogador determine sua movimentação em um determinado turno no jogo com base nos resultados dos três turnos anteriores.
+
+Cada turno no jogo pode ter um dos quatro resultados. Vamos representar cada um desses resultados por um número de 0 a 3:
+
+0: recompensa (ambos os jogadores cooperaram)
+
+1: otário (o jogador coopera e o oponente vence)
+
+2: penalidade (ambos os jogadores desertaram)
+
+3: tentação (o jogador comete e o oponente coopera)
+
+Agora, usando 0 para representar a deserção e 1 para representar a cooperação, uma matriz tridimensional de valores binários pode ser usada para representar uma estratégia. Como existem quatro escolhas possíveis para cada turno, e nossas estratégias serão baseadas nos três turnos anteriores, nossa matriz precisará ser 4 x 4 x 4 = 64 bits. Também incluiremos três bits que representam o comportamento do jogador nos primeiros três turnos, de modo que cada cromossomo será representado por 67 bits. (Vamos colocar os três bits que representam as três primeiras voltas no final do cromossomo).
+
+Assim, um cromossomo que consiste de 67 1s cooperaria em cada movimento, independentemente do comportamento de seu oponente. Da mesma forma, 67 0s significaria que o cromossomo desertou em cada turno.";"Um problema com o algoritmo genético que descrevemos acima para jogar Dilema do Prisioneiro é que as populações tendem a estagnar. Ou seja, uma vez que um cromossomo evolui e alcança uma pontuação muito alta, os cromossomos que são diferentes e pontuam menos do que este tendem a morrer, e a população acabará com todos os cromossomos jogando a mesma estratégia. Em outras palavras, a população carece de diversidade.
+
+A diversidade é uma medida útil que é frequentemente usada em algoritmos genéticos para evitar a estagnação. Como a mutação, também ajuda a evitar os máximos locais.
+
+Por isso, costuma ser uma boa ideia incorporar uma medida de diversidade na métrica de adequação de um algoritmo genético.";Em muitos sistemas de algoritmos genéticos, a adequação de um cromossomo individual é determinada pelo tratamento dos dados contidos em seus genes como uma representação de uma possível solução para o problema ou, em alguns casos, uma estratégia para lidar com situações particulares.;"Há fortes evidências empíricas para sugerir que um dos principais fatores determinantes da evolução da maioria dos comportamentos e habilidades complexos em organismos do mundo real é a existência de predadores. Em um mundo sem predadores, há menos pressão para um bom desempenho e menos necessidade de desenvolver comportamentos sofisticados para sobreviver. Este princípio também se aplica na evolução artificial.
+
+Quando a evolução de duas ou mais espécies se entrelaça dessa maneira, o processo é conhecido como co-evolução.
+
+Como resultado, é claro, o predador precisará se tornar mais rápido ou desenvolver novas habilidades que permitam capturar presas suficientes. Em alguns casos, o ciclo é interrompido quando uma espécie morre ou uma nova espécie a supera.
+
+A co-evolução é um elemento vital dos processos biológicos evolutivos e também pode ser aproveitada em algoritmos genéticos e outros processos que envolvem a evolução artificial."
+Algoritmos genéticos são uma forma de busca local, ou seja, é um método que aplica pequenas mudanças em possíveis soluções para um problema até que seja identificado uma solução ótima. Os algoritmos genéticos usam métodos baseados em evolução para fazer pequenas mudanças a uma população de cromossomos para encontrar uma solução ótima.;A representação mais simples usada é uma string de bits.;Um cromossomo representa um “indivíduo” completo dentro da população, ou seja, representação de uma solução ou classificação. Um cromossomo é um conjunto de genes, onde cada gene representa cada uma das características do indivíduo. Um conjunto de cromossomos será chamado de população.  Os indivíduos são representados genotípicamente por vetores binários, onde cada elemento de um vetor denota a presença (1) ou ausência (0) de uma determinada característica: o seu genótipo. Os elementos podem ser combinados formando as características reais do indivíduo, ou o seu fenótipo. Cada solução será avaliada por uma função fitness, que deve retornar valores mais altos para estados melhores. ;É gerada uma população inicial ideal (de maneira randômica) de possíveis soluções para o problema. Em um processo iterativo, busca-se gerar uma boa solução por meio da evolução das melhores soluções da população atual, de acordo com a função fitness, que mede a qualidade de cada solução. Para a definição de cada nova população a partir das soluções escolhidas, três operadores genéticos são aplicados: elitismo (cópias das melhores soluções), cruzamento (combinação de partes de pares de soluções), e mutação (altera a composição de algumas soluções, permitindo a criação de soluções que ainda não foram observadas). Esse processo iterativo é repetido até que um critério de parada seja satisfeito.;O crossover (cruzamento) pega-se um par de cromossomos, e escolhe-se um ponto de cruzamento dentre as posições na cadeia de bits, que será o ponto de corte desse cromossomo. Depois, recombina-se as partes “quebradas” para formar um novo cromossomo.;NO CROSSOVER DE PONTO ÚNICO, APENAS UM PONTO DE CRUZAMENTO/CORTE SERÁ ESCOLHIDO. NO CROSSOVER DE DOIS PONTOS, DOIS PONTOS SÃO ESCOLHIDOS QUE DIVIDEM OS CROMOSSOMOS EM DUAS SEÇÕES, COM AS SEÇÕES EXTERNAS CONSIDERADAS UNIDAS para transformar o cromossomo em um anel. Outra forma de cruzamento é crossover uniforme, nele uma probabilidade p é usada para determinar se um determinado bit do pai 1 será usado ou pai 2. Em outras palavras, uma criança pode receber quaisquer bits aleatórios de cada um de seus pais.;Mutação é um operador unário, que normalmente é aplicado com uma probabilidade baixa, onde essa probabilidade é utilizada para determinar se um valor de um bit de um cromossomo terá seu valor revertido ou não.;Dois métodos são normalmente utilizados para determinar o encerramento da execução de um algoritmo genético. Um  deles consiste em estabelecer um número máximo de gerações. Outra maneira seria observar quando uma solução particular foi alcançada ou quando uma população alcançar um nível máximo da função fitness.;Os algoritmos genéticos combinam uma propensão a encontrar um ponto máximo com a exploração aleatória com a troca de informações entre processos de busca paralelas. Matematicamente tem-se que dada uma função f(x), cada cromossomo irá representar um possível valor de x, e a função de avaliação de uma população consiste em pegar cada conjunto de bits (cromossomos) transformar em um valor decimal e aplicar na função f(x). Uma solução ótima, nesse caso, representa o máximo de uma função matemática.;Um esquema é uma representação capaz de descrever diversos cromossomos simultaneamente. Um esquema é construído inserindo-se um caracter (*) no alfabeto de gene, indicando que aquele gene pode ser qualquer valor. ;Mutação e crossover são ambos capazes de reduzir o número de ocorrências de um esquema particular em uma população de cromossomos. Eles também são capazes de aumentar o número de ocorrências de um determinado esquema.;A teoria dos esquemas tenta explicar por que os algoritmos genéticos funcionam. Esquemas com comprimento curto, de ordem baixa, e com fitness acima da média, têm um aumento exponencial de sua participação em gerações consecutivas de um algoritmo genético. Uma consequência imediata é que os algoritmo genéticos tendem a explorar o espaço por meio de esquemas curtos e de baixa ordem que são usados para troca de informação durante o crossover.;Um bloco de construção são esquemas curtos, de baixa ordem e alto desempenho. Um bloco de construção é uma consequência direta do teorema dos esquemas. Em outras palavras, os algoritmos genéticos funcionam bem quando um pequeno grupo de genes que estão próximos representam uma característica que contribui para a adequação de um cromossomo.; A representação escolhida para algoritmos genéticos é muito importante. A seleção aleatória de bits para representar recursos específicos de uma solução não é suficiente. Os bits devem ser escolhidos de tal forma que se agrupam naturalmente em blocos de construção, cujo algoritmos são projetados para manipular.;"Alguns blocos de construção podem direcionar erroneamente o algoritmo, levando-o a convergir a pontos sub-ótimos, esse processo é conhecido como decepção. Com isso, a hipótese dos blocos construtivos não fornece uma explicação definitiva do porquê os algoritmos genéticos funcionam. Para combater esse problema há algumas alternativas propostas:
+
+	*
+
+Assumir que há algum conhecimento a priori da função objetivo para que seja possível codificá-la de forma apropriada.
+	*
+
+Utilizar um operador de inversão: seleciona-se 2 pontos em um cromossomo e inverte-se a ordem dos bits entre os pontos selecionados.
+	*
+
+Utilizar algoritmos genéticos messy.";Em um MGA cada bit é rotulado com sua posição. Um cromossomo não precisa conter um valor para cada posição e, de fato, uma determinada posição em um cromossomo pode ter mais de um valor.  Cada bit em um cromossomo é representado por um par de números: o primeiro número representa a posição dentro do cromossomo e o segundo number é o valor do bit (0 ou 1).;O dilema do prisioneiro define uma situação de conflitos de interesses, onde dois indivíduos são presos e colocados em celas diferentes e sem comunicação entre eles. Se um prisioneiro trair o outro, então ele será livre, e receberá uma recompensa, enquanto seu amigo é torturado. Se ambos traírem uns aos outros, ambos serão torturados e, se nenhum deles trair o outro, ser libertado. Portanto, cada turno do jogo consiste em 4 possibilidades, e uma estratégia pode ser representada por um array binário de 3 dimensões. Então, tem-se que 4X4X4 = 64 bits, mais 3 bits para representar o comportamento do jogador nos três primeiros turnos.; Quando um cromossomo atinge uma “pontuação” muito alta, cromossomos que possuem uma pontuação mais baixa tendem a morrer, e a população acaba com cromossomos com mesmas estratégias, perdendo diversidade. A diversidade é uma boa medida a ser usada contra estagnação, evitando assim uma solução máxima local.;O cromossomo é um genótipo de uma “criatura”, e a manifestação física do genótipo é o fenótipo. Em um algoritmo genético, o fenótipo é um comportamento, ou uma solução para um problema.;"Em um mundo sem predadores, há menos pressão para um bom desempenho e menos necessidade de desenvolver comportamentos sofisticados para sobreviver.  
+
+Coevolução pode ser pensada como uma corrida armamentista: quando um país desenvolve o arco e flecha, seus inimigos precisam desenvolver uma arma similarmente poderosa ou uma defesa apropriada. Ao fazer isso, país pode tropeçar em explosivos e, assim, forçar seus inimigos a desenvolver defesas adequadas para isso."
+Algoritmos genéticos são uma forma de busca que usa métodos baseados na evolução para fazer mudanças em uma população de cromossomos (espaço de algumas soluções possíveis), na tentativa de identificar uma solução ótima, ou próximo de ótima.;A representação mais simples para algoritmos genéticos é aquela que foi usada por John Holland: uma série de bits. Uma sequência de bits é conhecida como um cromossomo e cada bit é conhecido como um gene. Ambos os termos são emprestados diretamente da genética e ilustram a maneira próxima em que algoritmos genéticos espelham processos biológicos.;"A POPULAÇÃO CONSISTE DE UM CONJUNTO DE CROMOSSOMOS, CADA QUAL, COMO VIMOS, É COMPOSTO DE GENES.
+
+UM CROMOSSOMO É GERALMENTE USADO PARA REPRESENTAR UM “INDIVÍDUO” COMPLETO DENTRO DA POPULAÇÃO - EM OUTRAS PALAVRAS, UMA REPRESENTAÇÃO COMPLETA DE UMA SOLUÇÃO OU UMA CLASSIFICAÇÃO. TAMBÉM É POSSÍVEL COMBINAR CROMOSSOMOS JUNTOS PARA FORMAR CRIATURAS, O QUE REFLETE MAIS DE PERTO A GENÉTICA REAL, PORQUE CADA INDIVÍDUO NO MUNDO REAL TEM UM NÚMERO DE CROMOSSOMOS.
+
+CADA GENE REPRESENTA ALGUMA CARACTERÍSTICA DO CONJUNTO GENÉTICO DO INDIVÍDUO.
+
+FENÓTIPO INDICA A FORMA FÍSICA REAL DO INDIVÍDUO, E GENÓTIPO É A REPRESENTAÇÃO DE SUA INFORMAÇÃO GENÉTICA.
+
+FITNESS É UMA FUNÇÃO DE AVALIAÇÃO QUE AVALIA O QUANTO UMA DADA SOLUÇÃO É ADEQUADA PARA RESOLVER O PROBLEMA DADO.";"1. Gerar uma população aleatória de cromossomos (esta é a primeira geração).
+
+2. Se os critérios de terminação estiverem satisfeitos, pare. Caso contrário, continue na etapa 3.
+
+3. Determine a adequação de cada cromossomo.
+
+4. Aplique crossover e mutação aos cromossomos selecionados da geração atual para gerar uma nova população de cromossomos - a próxima geração.
+
+5. Volte ao passo 2.
+
+O tamanho da população deve ser determinado com antecedência. Normalmente, o tamanho da população permanece constante de uma geração para a próxima. Em algumas situações, pode ser útil ter uma população que mude de tamanho.";"O crossover é o cruzamento entre cromossomos de uma mesma geração. O operador de crossover é aplicado a dois cromossomos com o mesmo comprimento da seguinte forma:
+
+1. Selecione um ponto de cruzamento aleatório.
+
+2. Quebre cada cromossomo em duas partes, dividindo-o no ponto de cruzamento.
+
+3. Recombine os cromossomos quebrados combinando a frente de um com as costas do outro, e vice-versa, para produzir dois novos cromossomos.";"O crossover de um ponto define apenas um ponto de divisão no cromossomo e cruza com outro cromossomo que fez este mesmo processo. 
+
+No cruzamento de dois pontos, dois pontos são escolhidos que dividem os cromossomos em duas seções, com as seções externas consideradas unidas para transformar o cromossomo em um anel. 
+
+Outra forma de cruzamento é crossover uniforme. Aqui, uma probabilidade, p, é usada para determinar se um dado bit do pai 1 será usado, ou do pai 2. Um filho pode assim receber quaisquer bits aleatórios de cada um de seus pais.";A mutação é um operador unário (isto é, é aplicada a apenas um argumento - um único gene) que é geralmente aplicado com uma baixa probabilidade, como 0,01 ou 0,001. A mutação envolve simplesmente inverter o valor de um bit em um cromossomo. Por exemplo, com uma taxa de mutação de 0,01, pode ser esperado que um gene em um cromossomo de 100 genes possa ser revertido.;"Normalmente existem duas maneiras em que uma execução de um algoritmo genético é finalizada. Normalmente, um limite é colocado no número de gerações, após o qual a corrida é considerada como concluída.
+
+Com alguns problemas, a execução pode parar quando uma determinada solução é atingida ou quando o nível de condicionamento mais alto da população atinge um determinado valor.
+
+Em outros é utilizado julgamento humano.";"Cada indivíduo pode ser considerado um conjunto de bits que corresponderá ao valor de x em decimal para a função. Após isso as principais escolhas são: Escolha da População: a inicialização da população é feita da forma mais simples possível, fazendo-se uma escolha aleatória independente para cada indivíduo da população inicial ou por processo heurístico, isto é, simplesmente escolher n indivíduos dentro do espaço de busca.
+
+Avaliação: a função de avaliação, ou função objetiva, é utilizada para determinar a qualidade de um indivíduo como solução do problema, ou seja, é uma forma de mensurar quão aptos estão os indivíduos da população. A função de avaliação deve refletir os objetivos a serem alcançados na resolução de um problema e é derivada diretamente das condições impostas pelo problema.
+
+Seleção: a seleção dos indivíduos da população deve simular o mecanismo de seleção natural, sobrevivência dos mais fortes , em que os pais mais aptos geram mais filhos. O algoritmo permite, também, que alguns indivíduos menos aptos gerem filhos, garantindo a diversidade entre os indivíduos melhores e os piores. Se apenas os melhores indivíduos se reproduzirem a população tenderá a ser cada vez mais semelhante, não ocorrendo à evolução.
+
+Elitismo: visa preservar os melhores cromossomos de uma geração para outra sem alterações, garantindo sempre melhor solução encontrada em qualquer uma das gerações será mantida até o final do processo. Geralmente usa-se nos Algoritmos Genéticos uma taxa de elitismo de 30% do total de indivíduos gerados. 
+
+Cruzamento: o cruzamento ou crossover é em processo de recombinação de partes das sequências de caracteres entre pares de cromossomos, com o objetivo de gerar nova descendência.
+
+Mutação: este operador é responsável pela introdução e manutenção da diversidade genética na população. O operador de mutação inverte os valores de bits, ou seja, muda o valor de dado bit de 1 para 0 ou de 0 para 1, com o objetivo de tentar regenerar algum indivíduo que possa ter sido eliminado de forma inesperada. Para que uma determinada população não sofra muitas alterações, esta operação é processada para um pequeno percentual PM de seus elementos, em torno de 1% de todos os genes.";UM ESQUEMA É UMA CADEIA DE BITS QUE REPRESENTA UM POSSÍVEL CROMOSSOMO, USANDO * PARA REPRESENTAR “QUALQUER VALOR”.;Tanto a mutação como o crossover podem destruir a presença de um esquema. Em outras palavras, mutação e crossover são capazes de reduzir o número de ocorrências de um esquema particular em uma população de cromossomos. Eles também são capazes de aumentar o número de ocorrências de um dado esquema.;“Esquemas de ordem baixa e curta que são mais apurados do que a aptidão média da população aparecerão com regularidade exponencialmente crescente nas gerações subsequentes”.;A HIPÓTESE DO BLOCO DE CONSTRUÇÃO É UMA CONSEQÜÊNCIA DO TEOREMA DO ESQUEMA, QUE PODE SER DECLARADO COMO “ALGORITMOS GENÉTICOS MANIPULAM ESQUEMAS CURTOS DE BAIXA ORDEM E ALTA APTIDÃO PARA ENCONTRAR SOLUÇÕES ÓTIMAS PARA PROBLEMAS”.;OS ALGORITMOS GENÉTICOS FUNCIONAM BEM QUANDO UM PEQUENO GRUPO DE GENES QUE ESTÃO PRÓXIMOS REPRESENTAM UMA CARACTERÍSTICA QUE CONTRIBUI PARA A ADEQUAÇÃO DE UM CROMOSSOMO. A SELEÇÃO ALEATÓRIA DE BITS PARA REPRESENTAR RECURSOS ESPECÍFICOS DE UMA SOLUÇÃO NÃO É SUFICIENTE. OS BITS DEVEM SER ESCOLHIDOS DE FORMA A SE AGRUPAREM NATURALMENTE EM BLOCOS DE CONSTRUÇÃO;"EM ALGUNS PROBLEMAS, ALGUNS BLOCOS CONSTRUTIVOS (ESQUEMAS CURTOS, DE ORDEM BAIXA) PODEM DIRECIONAR ERRONEAMENTE O ALGORITMO, LEVANDO-O A CONVERGIR A PONTOS SUB-ÓTIMOS. ESTE FENÔMENO É CONHECIDO COMO DECEPÇÃO.
+
+ALGUMAS ALTERNATIVAS FORAM PROPOSTAS PARA COMBATER O PROBLEMA DA DECEPÇÃO. A PRIMEIRA ASSUME QUE HÁ ALGUM CONHECIMENTO A PRIORI DA FUNÇÃO OBJETIVO PARA QUE SEJA POSSÍVEL CODIFICA-LA DE FORMA APROPRIADA (QUE FORME BLOCOS CONSTRUTIVOS “COESOS”). A SEGUNDA É A UTILIZAÇÃO DE UM OPERADOR DE INVERSÃO: SELECIONAM-SE 2 PONTOS EM UM CROMOSSOMO E INVERTE-SE A ORDEM DOS BITS ENTRE OS PONTOS SELECIONADOS. A TERCEIRA OPÇÃO É UTILIZAR ALGORITMOS GENÉTICOS MESSY, QUE DIFEREM DO ALGORITMO GENÉTICO CLÁSSICO DE VÁRIAS MANEIRAS: CODIFICAÇÃO, OPERADORES, PRESENÇA DE CROMOSSOMOS DE TAMANHO DISTINTO E FASES EVOLUTIVAS.";"Algoritmos genéticos confusos foram desenvolvidos como uma alternativa aos algoritmos genéticos padrão.
+
+Com algoritmos genéticos confusos (MGAs), cada bit é rotulado com sua posição. Um cromossomo não precisa conter um valor para cada posição e, de fato, uma determinada posição em um cromossomo pode ter mais de um valor.
+
+Cada bit em um cromossomo é representado por um par de números: o primeiro número representa a posição dentro do cromossomo e o segundo número é o valor do bit (0 ou 1).
+
+Os MGAs usam o operador de mutação como nos algoritmos genéticos padrão. Em vez de cruzamento, os MGAs usam os operadores de emenda e corte.
+
+Os MGAs são mais imunes a decepção do que os algoritmos genéticos padrão e mostraram convergir em soluções ótimas com funções extremamente enganosas.";"Cada turno no jogo pode ter um dos quatro resultados. Vamos representar cada um desses resultados por um número de 0 a 3:
+
+0: recompensa (ambos os jogadores cooperaram)
+
+1: otário (o jogador coopera e o oponente vence)
+
+2: penalidade (ambos os jogadores desertaram)
+
+3: tentação (o jogador comete e o oponente coopera)
+
+Agora, usando 0 para representar a deserção e 1 para representar a cooperação, uma matriz tridimensional de valores binários pode ser usada para representar uma estratégia. Como existem quatro escolhas possíveis para cada turno, e nossas estratégias serão baseadas nos três turnos anteriores, nossa matriz precisará ser 4 x 4 x 4 = 64 bits. Também incluiremos três bits que representam o comportamento do jogador nos primeiros três turnos, de modo que cada cromossomo será representado por 67 bits. (Vamos colocar os três bits que representam as três primeiras voltas no final do cromossomo).
+
+Assim, um cromossomo que consiste de 67 1s cooperaria em cada movimento, independentemente do comportamento de seu oponente. Da mesma forma, 67 0s significaria que o cromossomo desertou em cada turno.";"A diversidade é uma medida útil que é frequentemente usada em algoritmos genéticos para evitar a estagnação. Como a mutação, também ajuda a evitar os máximos locais.
+
+Por isso, costuma ser uma boa ideia incorporar uma medida de diversidade na métrica de adequação de um algoritmo genético.";Em muitos sistemas de algoritmos genéticos, a adequação de um cromossomo individual é determinada pelo tratamento dos dados contidos em seus genes como uma representação de uma possível solução para o problema ou, em alguns casos, uma estratégia para lidar com situações particulares.;"Em um mundo sem predadores, há menos pressão para um bom desempenho e menos necessidade de desenvolver comportamentos sofisticados para sobreviver. Este princípio também se aplica na evolução artificial.
+
+Quando a evolução de duas ou mais espécies se entrelaça dessa maneira, o processo é conhecido como co-evolução.
+
+Como resultado, é claro, o predador precisará se tornar mais rápido ou desenvolver novas habilidades que permitam capturar presas suficientes. Em alguns casos, o ciclo é interrompido quando uma espécie morre ou uma nova espécie a supera.
+
+A co-evolução é um elemento vital dos processos biológicos evolutivos e também pode ser aproveitada em algoritmos genéticos e outros processos que envolvem a evolução artificial."
+;;;;;;;;;;;;;;;;;;;
+"Algoritmos genéticos são uma forma de busca local que usa métodos baseados na
+
+evolução para fazer pequenas mudanças em uma população de cromossomos, na tentativa
+
+de identificar uma solução ótima.";"Temos visto várias representações diferentes que podem ser usadas em técnicas evolutivas
+
+como algoritmos genéticos. A programação genética é usada para desenvolver expressões
+
+S, que podem ser usadas como programas LISP para resolver problemas. Os sistemas
+
+classificadores usam uma cadeia de números que representam propriedades do ambiente e
+
+símbolos que representam respostas a essas propriedades.
+
+A representação mais simples para algoritmos genéticos é aquela que foi usada por John
+
+Holland: uma série de bits. Uma sequência de bits é conhecida como um cromossomo e
+
+cada bit é conhecido como um gene. Ambos os termos são emprestados diretamente da
+
+genética e ilustram a maneira próxima em que algoritmos genéticos espelham processos
+
+biológicos.";"A população consiste de um conjunto de cromossomos, cada qual, como vimos, é composto
+
+de genes. Um cromossomo é geralmente usado para representar um “indivíduo” completo
+
+dentro da população - em outras palavras, uma representação completa de uma solução ou
+
+uma classificação. Também é possível combinar cromossomos juntos para formar criaturas,
+
+o que reflete mais de perto a genética real, porque cada indivíduo no mundo real tem um
+
+número de cromossomos.";"O processo para executar um algoritmo genético é o seguinte:
+
+1. Gerar uma população aleatória de cromossomos (esta é a primeira geração).
+
+2. Se os critérios de terminação estiverem satisfeitos, pare. Caso contrário, continue na
+
+etapa 3.
+
+3. Determine a adequação de cada cromossomo.
+
+4. Aplique crossover e mutação aos cromossomos selecionados da geração atual para
+
+gerar uma nova população de cromossomos - a próxima geração.
+
+5. Volte ao passo 2.
+
+O tamanho da população deve ser determinado com antecedência. Normalmente, o
+
+tamanho da população permanece constante de uma geração para a próxima. Em algumas
+
+situações, pode ser útil ter uma população que mude de tamanho.
+
+O tamanho de cada cromossomo deve permanecer o mesmo para o cruzamento a ser
+
+aplicado. É possível executar algoritmos genéticos com tamanhos de cromossomos
+
+variáveis, mas isso é incomum.
+
+Tipicamente, os cromossomos mais aptos são selecionados em cada geração para se
+
+acasalarem, e cada par de cromossomos é permitido produzir dois descendentes. O
+
+conjunto resultante de cromossomas descendentes substitui a geração anterior.
+
+Também é possível permitir que pais particularmente aptos produzam relativamente mais
+
+descendentes e permitam que certos membros de uma geração sobrevivam à próxima
+
+geração. Para a maior parte deste capítulo, vamos supor que cada par de pais produz dois
+
+descendentes e que esses descendentes substituam os pais.";"O crossover é o cruzamento entre cromossomos de uma mesma geração. O operador de
+
+crossover é aplicado a dois cromossomos com o mesmo comprimento da seguinte forma:
+
+1. Selecione um ponto de cruzamento aleatório.
+
+2. Quebre cada cromossomo em duas partes, dividindo-o no ponto de cruzamento.
+
+3. Recombine os cromossomos quebrados combinando a frente de um com as costas do
+
+outro, e vice-versa, para produzir dois novos
+
+cromossomos.";"O crossover é o cruzamento entre cromossomos de uma mesma geração. O operador de
+
+crossover é aplicado a dois cromossomos com o mesmo comprimento da seguinte forma:
+
+1. Selecione um ponto de cruzamento aleatório.
+
+2. Quebre cada cromossomo em duas partes, dividindo-o no ponto de cruzamento.
+
+3. Recombine os cromossomos quebrados combinando a frente de um com as costas do
+
+outro, e vice-versa, para produzir dois novos
+
+cromossomos.";"A mutação é um operador unário (isto é, é aplicada a apenas um argumento - um único
+
+gene) que é geralmente aplicado com uma baixa probabilidade, como 0,01 ou 0,001. A
+
+mutação envolve simplesmente inverter o valor de um bit em um cromossomo. Por exemplo,
+
+com uma taxa de mutação de 0,01, pode ser esperado que um gene em um cromossomo
+
+de 100 genes possa ser revertido.";"Normalmente existem duas maneiras em que uma execução de um algoritmo genético é
+
+finalizada. Normalmente, um limite é colocado no número de gerações, após o qual a
+
+corrida é considerada como concluída.
+
+Com alguns problemas, a execução pode parar quando uma determinada solução é
+
+atingida ou quando o nível de condicionamento mais alto da população atinge um
+
+determinado valor. Por exemplo, um algoritmo genético pode ser usado para resolver uma
+
+função matemática. Nesse caso, fica claro que a execução pode parar quando a solução
+
+correta for atingida, para a qual pode ser facilmente testada.
+
+Em muitos casos, os algoritmos genéticos são usados para resolver problemas que
+
+possuem uma solução objetiva, caso em que o algoritmo pode parar quando atinge essa
+
+solução. Em outros casos, eles são usados para propósitos mais abstratos, como gerar
+
+imagens interessantes. Nestes casos, o julgamento humano deve ser usado para
+
+determinar quando terminar.";"Algoritmos Genéticos parte de uma população indivíduos gerados aleatoriamente
+
+(configurações iniciais de um problema), realiza-se a avaliação de cada um (em relação a
+
+função objetiva), seleciona os mais aptos e promove os manipuladores ou operadores
+
+genéticos como cruzamento e mutação, originando novas gerações de indivíduos. Cada
+
+indivíduo na população representa uma possível solução para um dado problema, o que o
+
+AG faz é buscar aquela solução que seja muito boa ou a melhor do problema analisado
+
+através da criação de população de indivíduos cada vez mais aptos levando à otimização
+
+da função objetiva.
+
+Escolha da População: a inicialização da população é feita da forma mais simples
+
+possível, fazendo-se uma escolha aleatória independente para cada indivíduo da população
+
+inicial ou por processo heurístico, isto é, simplesmente escolher n indivíduos dentro do
+
+espaço de busca.
+
+Avaliação: a função de avaliação, ou função objetiva, é utilizada para determinar a
+
+qualidade de um indivíduo como solução do problema, ou seja, é uma forma de mensurar
+
+quão aptos estão os indivíduos da população. A função de avaliação deve refletir os
+
+objetivos a serem alcançados na resolução de um problema e é derivada diretamente das
+
+condições impostas pelo problema.
+
+Seleção: a seleção dos indivíduos da população deve simular o mecanismo de seleção
+
+natural, sobrevivência dos mais fortes , em que os pais mais aptos geram mais filhos. O
+
+algoritmo permite, também, que alguns indivíduos menos aptos gerem filhos, garantindo a
+
+diversidade entre os indivíduos melhores e os piores. Se apenas os melhores indivíduos se
+
+reproduzirem a população tenderá a ser cada vez mais semelhante, não ocorrendo à
+
+evolução.
+
+Elitismo: visa preservar os melhores cromossomos de uma geração para outra sem
+
+alterações, garantindo sempre melhor solução encontrada em qualquer uma das gerações
+
+será mantida até o final do processo. Geralmente usa-se nos Algoritmos Genéticos uma
+
+taxa de elitismo de 30% do total de indivíduos gerados.
+
+Cruzamento: o cruzamento ou crossover é em processo de recombinação de partes das
+
+seqüências de caracteres entre pares de cromossomos, com o objetivo de gerar nova
+
+descendência.
+
+Mutação: este operador é responsável pela introdução e manutenção da diversidade
+
+genética na população. O operador de mutação inverte os valores de bits, ou seja, muda o
+
+valor de dado bit de 1 para 0 ou de 0 para 1, com o objetivo de tentar regenerar algum
+
+indivíduo que possa ter sido eliminado de forma inesperada. Para que uma determinada
+
+população não sofra muitas alterações, esta operação é processada para um pequeno
+
+percentual PM de seus elementos, em torno de 1% de todos os genes.";"Um esquema é uma cadeia de bits que representa um possível cromossomo, usando * para
+
+representar “qualquer valor”. Por exemplo, o seguinte esquema:
+
+* 11 *
+
+corresponde aos seguintes quatro cromossomas:
+
+0110
+
+0111
+
+1110
+
+1111";"Tanto a mutação como o crossover podem destruir a presença de um esquema. Em outras
+
+palavras, mutação e crossover são capazes de reduzir o número de ocorrências de um
+
+esquema particular em uma população de cromossomos. Eles também são capazes de
+
+aumentar o número de ocorrências de um dado esquema.";"“Esquemas de ordem baixa e curta que são mais apurados do que a aptidão média da
+
+população aparecerão com regularidade exponencialmente crescente nas gerações
+
+subseqüentes”.";"A hipótese do bloco de construção é uma conseqüência do teorema do esquema, que pode
+
+ser declarado como “Algoritmos genéticos manipulam esquemas curtos de alta ordem para
+
+encontrar soluções ótimas para problemas”. Esquemas de aptidão são conhecidos como
+
+blocos de construção.";"Os algoritmos genéticos funcionam bem quando um pequeno grupo de genes que estão
+
+próximos representam uma característica que contribui para a adequação de um
+
+cromossomo. Portanto, a representação escolhida para algoritmos genéticos é muito
+
+importante. A seleção aleatória de bits para representar recursos específicos de uma
+
+solução não é suficiente. Os bits devem ser escolhidos de forma a se agruparem naturalmente em blocos de construção, que os algoritmos genéticos são projetados para
+
+manipular.";"Em alguns problemas, alguns blocos construtivos (esquemas curtos, de ordem baixa)
+
+podem direcionar erroneamente o algoritmo, levando-o a convergir a pontos sub-ótimos.
+
+Este fenômeno é conhecido como decepção. Assim, a hipótese dos blocos construtivos não
+
+fornece uma explicação definitiva do porquê os algoritmos genéticos funcionam. Ela é
+
+apenas uma indicação do porquê os algoritmos genéticos funcionam para uma certa classe
+
+de problemas.
+
+Algumas alternativas foram propostas para combater o problema da decepção. A primeira
+
+assume que há algum conhecimento a priori da função objetivo para que seja possível
+
+codificá-la de forma apropriada (que forme blocos construtivos “coesos”). A segunda é a
+
+utilização de um operador de inversão: selecionam-se 2 pontos em um cromossomo e
+
+inverte-se a ordem dos bits entre os pontos selecionados (alterando-se a codificação em
+
+conjunto com a operação). A terceira opção é utilizar algoritmos genéticos messy, que
+
+diferem do algoritmo genético clássico de várias maneiras: codificação, operadores,
+
+presença de cromossomos de tamanho distinto e fases evolutivas.";"Algoritmos genéticos confusos foram desenvolvidos como uma alternativa aos algoritmos
+
+genéticos padrão.
+
+Com algoritmos genéticos confusos (MGAs), cada bit é rotulado com sua posição. Um
+
+cromossomo não precisa conter um valor para cada posição e, de fato, uma determinada
+
+posição em um cromossomo pode ter mais de um valor.
+
+Cada bit em um cromossomo é representado por um par de números: o primeiro número
+
+representa a posição dentro do cromossomo e o segundo número é o valor do bit (0 ou 1).
+
+Assim, o seguinte cromossomo:
+
+((1,0), (2,1), (4,0)
+
+poderia ser um cromossomo com quatro posições de bit, onde a posição do terceiro bit não
+
+é especificada. O cromossomo a seguir, em contraste, tem dois valores especificados para
+
+a terceira posição:
+
+((1,0), (2,1), (3,1), (3,0), (4,0)
+
+Os MGAs usam o operador de mutação como nos algoritmos genéticos padrão. Em vez de
+
+cruzamento, os MGAs usam os operadores de emenda e corte.
+
+Os MGAs são mais imunes a decepção do que os algoritmos genéticos padrão e mostraram
+
+convergir em soluções ótimas com funções extremamente enganosas.";"Escolhemos uma representação que represente a estratégia de um dado “jogador” ou
+
+cromossomo na população. Para nosso sistema, permitiremos que cada jogador determine
+
+sua movimentação em um determinado turno no jogo com base nos resultados dos três
+
+turnos anteriores.
+
+Cada turno no jogo pode ter um dos quatro resultados. Vamos representar cada um desses
+
+resultados por um número de 0 a 3:
+
+0: recompensa (ambos os jogadores cooperaram)
+
+1: otário (o jogador coopera e o oponente vence)
+
+2: penalidade (ambos os jogadores desertaram)
+
+3: tentação (o jogador comete e o oponente coopera)
+
+Agora, usando 0 para representar a deserção e 1 para representar a cooperação, uma
+
+matriz tridimensional de valores binários pode ser usada para representar uma estratégia.
+
+Como existem quatro escolhas possíveis para cada turno, e nossas estratégias serão
+
+baseadas nos três turnos anteriores, nossa matriz precisará ser 4 x 4 x 4 = 64 bits. Também
+
+incluiremos três bits que representam o comportamento do jogador nos primeiros três
+
+turnos, de modo que cada cromossomo será representado por 67 bits. (Vamos colocar os
+
+três bits que representam as três primeiras voltas no final do cromossomo).
+
+Assim, um cromossomo que consiste de 67 1s cooperaria em cada movimento,
+
+independentemente do comportamento de seu oponente. Da mesma forma, 67 0s
+
+significaria que o cromossomo desertou em cada turno.";"Um problema com o algoritmo genético que descrevemos acima para jogar Dilema do
+
+Prisioneiro é que as populações tendem a estagnar. Ou seja, uma vez que um cromossomo
+
+evolui e alcança uma pontuação muito alta, os cromossomos que são diferentes e pontuam
+
+menos do que este tendem a morrer, e a população acabará com todos os cromossomos
+
+jogando a mesma estratégia. Em outras palavras, a população carece de diversidade.
+
+A diversidade é uma medida útil que é frequentemente usada em algoritmos genéticos para
+
+evitar a estagnação. Como a mutação, também ajuda a evitar os máximos locais.
+
+Por isso, costuma ser uma boa ideia incorporar uma medida de diversidade na métrica de
+
+adequação de um algoritmo genético.";"Em muitos sistemas de algoritmos genéticos, a adequação de um cromossomo individual é
+
+determinada pelo tratamento dos dados contidos em seus genes como uma representação
+
+de uma possível solução para o problema ou, em alguns casos, uma estratégia para lidar
+
+com situações particulares.";"Há fortes evidências empíricas para sugerir que um dos principais fatores determinantes da
+
+evolução da maioria dos comportamentos e habilidades complexos em organismos do
+
+mundo real é a existência de predadores. Em um mundo sem predadores, há menos
+
+pressão para um bom desempenho e menos necessidade de desenvolver comportamentos
+
+sofisticados para sobreviver. Este princípio também se aplica na evolução artificial.
+
+Quando a evolução de duas ou mais espécies se entrelaça dessa maneira, o processo é
+
+conhecido como co-evolução.
+
+Como resultado, é claro, o predador precisará se tornar mais rápido ou desenvolver novas
+
+habilidades que permitam capturar presas suficientes. Em alguns casos, o ciclo é
+
+interrompido quando uma espécie morre ou uma nova espécie a supera.
+
+A co-evolução é um elemento vital dos processos biológicos evolutivos e também pode ser
+
+aproveitada em algoritmos genéticos e outros processos que envolvem a evolução artificial."
+São métodos de busca locais que chegam a uma solução ótima através de processos evolutivos.;Strings de bits, conhecidas como cromossomos.;"Gene: um bit. 
+
+Cromossomo: uma string de bits. 
+
+População: Conjunto de cromossomos. 
+
+Genótipo: A característica física dos cromossomos.  
+
+Fenótipo: O produto gerado pela atuação dos cromossomos.  
+
+Fitness: A medida de adequação do fenótipo de um cromossomo a uma métrica fixa. ";"Na primeira iteração, é gerada uma população aleatória de cromossomos;
+
+Observar se a população satisfaz o critério de término;
+
+Selecionar os cromossomos que melhor satisfazem ao critério de fitness, e reproduzí-los para a próxima geração ( através de mutação / crossover );
+
+Verificar novamente o critério de término e retomar a iteração.";O crossover é uma recombinação de cromossomos que foram quebrados em duas partes, trocando a parte do meio entre si.;"Um ponto: os cromossomos trocam metades. 
+
+Dois pontos: Cada cromossomo é quebrado em dois pontos, e trocam entre si a faixa do meio.  
+
+Uniforme: As trocas ocorrem bit a bit ( existe uma probabilidade do filho receber de um ou outro cromossomo pai ).";Ele é aplicado como uma baixa probabilidade de mudança no estado de um bit. Por exemplo, mudando 1 em cada 1000 bits de estado.;Quando se chega a uma solução, ou quando se atinge um determinado valor de fitness.;Devemos, partindo de cromossomos aleatórios, reproduzí-los na proporção de sua taxa de fitness, e terminar a execução quando for satisfeito o critério de término.;É uma string de bits que representa um cromossomo, usando a notação de asterisco para denotar um valor qualquer.;A mutação e o crossover favorecem a reprodução nas próximas gerações dos esquemas com maior fitness ratio, dado que a fitness de um esquema é a média da fitness dos cromossomos correspondentes.;Esquemas pequenos e curtos que estão acima da fitness média da população irão aparecer em frequência exponencialmente maior nas gerações seguintes.;"Esquemas pequenos, de baixa ordem e alta fitness são vistos como blocos de construção.
+
+Algoritmos genéticos manipulam blocos de construção para encontrar soluções ótimas.";Eles devem ocupar regiões vizinhas e formar um bloco de construção. ;"  Decepção é quando a escolha de reproduzir os cromossomos com maior fitness ratio resulta em cromossomos com baixo valor de fitness.  
+
+Ela pode ser minimizada através da inversão ( um tipo de mutação ), ou de algoritmos genéticos bagunçados ( messy ).";Os cromossomos na MGA são tuplas de (valor, posição ). Podem existir posições com mais de um cromossomo ou posições sem cromossomo.;Podemos escolher 4 alternativas a cada turno, e levamos em conta os três turnos anteriores. São necessários, portanto, 4 * 4 * 4 + 3, ou 67 bits ( 3 bits adicionais para registrar a primeira rodada ).;Populações com pouca diversidade tendem a estagnar, isto é, a não produzir progresso na fitness com o decorrer das gerações.;Eles podem representar soluções possíveis ou estratégias de resolução de um problema.;Há um aceleramento na evolução tanto da presa quanto do predador, pois ambos entram em um processo competitivo que leva à coevolução ( uma corrida pela melhor adaptabilidade ao meio ).
+Algoritmos  baseados nos mecanismos de seleção natural e da genética.;Normalmente é representado como um vetor fixo contendo 0 ou 1 em cada posição, esse mecanismo é chamado de cromossomo.;"Gene é cada bit contendo dentro do cromossomo,
+
+Cromossomo é a representação de um indivíduo que é feito por uma string de bits,
+
+População é o conjunto de indivíduos que compõem uma geração,
+
+Genótipo é um vetor de características que compõem um cromossomo/indivíduo,
+
+Fenótipo é a combinação do indivíduo formando características,
+
+Fitness indica o quão bem “adaptado” o indivíduo está para aquele “problema.";"É GERADO UMA POPULAÇÃO DE CROMOSSOMOS(INDIVÍDUOS) ALEATÓRIOS (PRIMEIRA GERAÇÃO)
+
+SE O CRITÉRIO DE PARADA FOR SATISFEITO O ALGORITMO ACABA, CASO CONTRÁRIO CONTINUA.
+
+DETERMINA O FITNESS DE CADA CROMOSSOMO(INDIVÍDUO).
+
+É APLICADO O CRUZAMENTO E MUTAÇÃO DOS CROMOSSOMOS SELECIONADOS PARA A NOVA POPULAÇÃO (PRÓXIMA GERAÇÃO)
+
+REPETE OS PASSOS A PARTIR DA ETAPA 2.";"SELECIONAR UM PONTO ALEATÓRIA DE CRUZAMENTO
+
+QUEBRAR CADA CROMOSSOMOS EM DUAS PARTES, DIVIDINDO O CROMOSSOMO.
+
+RECOMBINANDO AS PARTES DO CROMOSSOMO QUEBRADO PARA COMBINAR COM OUTRA PARTE DE OUTRO CROMOSSOMO E VICE VERSA, ASSIM GERANDO A PARTES DE DOIS CROMOSSOMOS MAIS DOIS CROMOSSOMOS.";EM SINGLE-POINT A QUEBRA É FEITA EM UMA PARTE, ASSIM DIVIDINDO O CROMOSSOMO EM DOIS, JÁ NO TWO-POINT A QUEBRA É FEITA EM DUAS PARTES, ASSIM GERANDO 3 NOVAS PARTES, NO MODELO UNIFORME É FEITA UMA SELEÇÃO BIT A BIT ONDE EXISTE UMA PROBABILIDADE QUE SEJA SELECIONADO O BIT DA PARTE 1 OU 2;Consistem em uma operação de inverter cada bit do cromossomo utilizando uma probabilidade de mutação. É aplicado de maneira semelhante ao cruzamento onde aleatoriamente é invertido um bit da sequência de genes do cromossomo.;Comumente é definido um número máximo de gerações ou/é um estado fitness do cromossomo.;É usado um função f(x) = sin(x), sendo x um valor em radianos que vai de 1 a 15, esse x é o valor decimal da convenção de cada quarteto de bits de cada cromossomo. ;Esquemas (schemata) é uma string de bits que representa uma possibilidade de cromossomos, sendo que nessa string existem n*s como por exemplo(*11*), assim podendo criar variações com base na alteração desses * para 0 ou 1.;O USO DAS MUTAÇÕES E CROSSOVERS PODEM REDUZIR A QUANTIDADE OCORRÊNCIAS DE UM ESQUEMA OU AUMENTAR, ASSIM CRIANDO UM DESBALANCEAMENTO NOS GENES.;Diz que se tiver um schemata curto e de baixa ordem com um fitness acima da média, isso aumenta exponencialmente a sua frequência em gerações seguintes.;É uma consequência do teorema schema, onde para ter uma solução ótima para os problemas o algoritmo deve ter um grupo pequeno de genes as quais estão juntos e isso contribui para o fitness do cromossomo.;Eles devem ser agrupados de maneira natural em blocos de construção.;Se trata de um problema em algoritmos genéticos que induz um erro por algum bloco de construção onde provoca uma solução abaixo do ideal, uma forma de evitar o efeito é usar a estratégia de inversão, que é um operador unário de bits dentro do cromossomo que inverte os bits entre o quarto e o oitavo.;As principais diferenças se dão na abordagem dos cromossomos e genes, cada bit em um cromossomo é representado por um par de números, sendo o primeiro a a posição dentro do cromossomo e o segundo é o valor do bit, o cromossomo não precisa ter um valor para cada posição e também permite que ele tenha na mesma posição mais de um valor;-;Ao passar das gerações a tendência é que a população fique estagnado dado que os cromossomos que obtém um baixo desempenho acabam morrendo e assim pede a diversidade.;Em termos gerais ele representa uma ação.;Faz com que o predador tenha que se aperfeiçoar com novas habilidades para não acabar morrendo, e isso gera uma melhor evolução das espécies pois quando o predador evolui as “vítimas” terão que também evoluir para sobreviverem.
