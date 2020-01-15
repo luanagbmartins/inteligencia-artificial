@@ -4,7 +4,7 @@ Esse repositório contém uma coleção de projetos desenvolvidos durante o curs
 
 Os projetos estão divididos em módulos, onde cada módulo contém um notebook documentando as etapas de tratamento, treinamento e classificação dos dados.
 
-Esse projeto foi desenvolvido em conjunto com os alunos: 
+Desenvolvido em conjunto com os alunos: 
 * Luana Guedes Barros Martins
 * Ruan Chaves Rodrigues
 * Thiago Monteles de Souza
